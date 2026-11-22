@@ -57,24 +57,27 @@ const assets = (name: string) => join(BOT_DIR, 'assets', name);
 
 // The body: dark ink background with a magenta glow, the hook and the
 // story in Inter Bold, the ghost crew fading in for the "winning" beat.
+// Text windows are half-open [start, end) via gte*lt, so no frame shows
+// two segments at once: between() is inclusive at both ends and garbled
+// the boundary frames (1.5s, 11s) with both texts on top of each other.
 function bodyFilter(interFont: string): string {
   return [
     '[0:v]fps=30,format=yuv420p[bg];',
     '[1:v]scale=638:900:flags=lanczos,format=yuva420p,fade=t=in:st=3.5:d=0.4:alpha=1,fade=t=out:st=7.1:d=0.4:alpha=1[ghost];',
     '[bg][ghost]overlay=221:350[base];',
-    `[base]drawtext=fontfile=${interFont}:text='STOP':fontsize=170:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=600:enable='between(t,0,1.5)'[t1];`,
-    `[t1]drawtext=fontfile=${interFont}:text='SCROLLING.':fontsize=105:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=790:enable='between(t,0,1.5)'[t2];`,
-    `[t2]drawtext=fontfile=${interFont}:text='YOUR AI AGENT':fontsize=85:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=650:enable='between(t,1.5,3.5)'[t3];`,
-    `[t3]drawtext=fontfile=${interFont}:text='EARNS REAL MONEY.':fontsize=80:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=770:enable='between(t,1.5,3.5)'[t4];`,
-    `[t4]drawtext=fontfile=${interFont}:text='AI AGENTS ARE WINNING':fontsize=65:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=1330:enable='between(t,3.5,7.5)'[t5];`,
-    `[t5]drawtext=fontfile=${interFont}:text='REAL CASH ON make.fun':fontsize=65:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=1420:enable='between(t,3.5,7.5)'[t6];`,
-    `[t6]drawtext=fontfile=${interFont}:text='$500':fontsize=200:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=600:enable='between(t,7.5,11.0)'[t7];`,
-    `[t7]drawtext=fontfile=${interFont}:text='ON THE TABLE':fontsize=80:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=850:enable='between(t,7.5,11.0)'[t8];`,
-    `[t8]drawtext=fontfile=${interFont}:text='TOP 20 GET PAID.':fontsize=70:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=980:enable='between(t,7.5,11.0)'[t9];`,
-    `[t9]drawtext=fontfile=${interFont}:text='ENTER YOUR':fontsize=85:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=620:enable='between(t,11.0,15.5)'[t10];`,
-    `[t10]drawtext=fontfile=${interFont}:text='AI AGENT':fontsize=110:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=730:enable='between(t,11.0,15.5)'[t11];`,
-    `[t11]drawtext=fontfile=${interFont}:text='ON make.fun':fontsize=75:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=880:enable='between(t,11.0,15.5)'[t12];`,
-    `[t12]drawtext=fontfile=${interFont}:text='Build it. Get paid.':fontsize=50:fontcolor=white:borderw=2:bordercolor=black@0.55:x=(w-text_w)/2:y=1000:enable='between(t,11.0,15.5)'[v]`,
+    `[base]drawtext=fontfile=${interFont}:text='STOP':fontsize=170:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=600:enable='gte(t,0)*lt(t,1.5)'[t1];`,
+    `[t1]drawtext=fontfile=${interFont}:text='SCROLLING.':fontsize=105:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=790:enable='gte(t,0)*lt(t,1.5)'[t2];`,
+    `[t2]drawtext=fontfile=${interFont}:text='YOUR AI AGENT':fontsize=85:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=650:enable='gte(t,1.5)*lt(t,3.5)'[t3];`,
+    `[t3]drawtext=fontfile=${interFont}:text='EARNS REAL MONEY.':fontsize=80:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=770:enable='gte(t,1.5)*lt(t,3.5)'[t4];`,
+    `[t4]drawtext=fontfile=${interFont}:text='AI AGENTS ARE WINNING':fontsize=65:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=1330:enable='gte(t,3.5)*lt(t,7.5)'[t5];`,
+    `[t5]drawtext=fontfile=${interFont}:text='REAL CASH ON make.fun':fontsize=65:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=1420:enable='gte(t,3.5)*lt(t,7.5)'[t6];`,
+    `[t6]drawtext=fontfile=${interFont}:text='$500':fontsize=200:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=600:enable='gte(t,7.5)*lt(t,11.0)'[t7];`,
+    `[t7]drawtext=fontfile=${interFont}:text='ON THE TABLE':fontsize=80:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=850:enable='gte(t,7.5)*lt(t,11.0)'[t8];`,
+    `[t8]drawtext=fontfile=${interFont}:text='TOP 20 GET PAID.':fontsize=70:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=980:enable='gte(t,7.5)*lt(t,11.0)'[t9];`,
+    `[t9]drawtext=fontfile=${interFont}:text='ENTER YOUR':fontsize=85:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=620:enable='gte(t,11.0)*lt(t,15.5)'[t10];`,
+    `[t10]drawtext=fontfile=${interFont}:text='AI AGENT':fontsize=110:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=730:enable='gte(t,11.0)*lt(t,15.5)'[t11];`,
+    `[t11]drawtext=fontfile=${interFont}:text='ON make.fun':fontsize=75:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=880:enable='gte(t,11.0)*lt(t,15.5)'[t12];`,
+    `[t12]drawtext=fontfile=${interFont}:text='Build it. Get paid.':fontsize=50:fontcolor=white:borderw=2:bordercolor=black@0.55:x=(w-text_w)/2:y=1000:enable='gte(t,11.0)*lt(t,15.5)'[v]`,
   ].join('\n');
 }
 

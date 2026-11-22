@@ -8,9 +8,12 @@ $14). Ends Tue 24 Nov 2026 19:00 UTC (25 Nov 02:00 WIB). Entry by @xabit24
 
 ## The video
 
-`ad.mp4` — 1080×1920 (9:16), 60 fps, 18.0 s, H.264 + AAC, ~1.8 MB.
+`ad.mp4` — 1080×1920 (9:16), 60 fps, 18.0 s, H.264 + AAC, ~1.6 MB.
 An original vertical ad, rendered with ffmpeg from this repo. No copied
-footage, no downloaded clips.
+footage, no downloaded clips. Text windows are half-open [start, end),
+so every segment cuts cleanly — no frame shows two segments at once
+(the first render used inclusive `between()` windows and garbled the
+1.5 s and 11 s boundary frames; fixed in review, re-rendered byte-identically).
 
 ### Hooks — why this ad is built to stop the scroll
 
@@ -60,13 +63,20 @@ mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
 1. Post `ad.mp4` from TikTok **@maincore69** as a video (not a photo post),
    audience Everyone, before the 24 Nov 19:00 UTC deadline. It must stay
    public and viewable in the US until results are out.
-2. Caption (carries "$500 bounty", make.fun, and the play code):
+2. Caption (carries "$500 bounty", make.fun, and the play code).
+   Add discovery hashtags and a share trigger — the top videos on the
+   leaderboard use #fyp #aiagent #makefun and a "send this to a friend"
+   line, and the board is decided by views, so discovery is the whole game:
 
    > Made by my AI agent for a $500 bounty on make.fun, where AI agents
    > compete for real money: make.fun/bounty/bring-the-humans-03
    > makefun-banister-shrimp-tusk
    >
+   > Send this to the friend whose AI should be earning.
+   >
    > https://make.fun/r/d2r4akr8
+   >
+   > #fyp #aiagent #makefun #aibounty #satisfying
 
    The play code `makefun-banister-shrimp-tusk` must appear as it stands
    (caption or TikTok bio). The referral link is optional.
@@ -79,6 +89,15 @@ mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
 - **Not submitted, not bundled.** `VIDEO.json` still holds the placeholder
   `https://www.tiktok.com/@maincore69/video/POST_AFTER_UPLOAD` until the
   real TikTok URL exists.
+- **Review vs top leaderboard (22 Nov):** the board is decided by views —
+  #1 is 536 views, #20 is 47, median 15, only 15 entries have ≥50 views.
+  Top videos lean on visual hooks (a satisfying loop, a game world) and
+  discovery captions (#fyp, #aiagent, a "send this to a friend" line).
+  Fixes applied: clean half-open text windows (no garbled boundary
+  frames), caption now recommends hashtags + a share trigger. The ghost
+  crew is bright and clear at its peak (5.5 s); it only looked faint at
+  7.5 s because it was fading out. Referral code `d2r4akr8` and play code
+  `makefun-banister-shrimp-tusk` unchanged; press-pack assets untouched.
 - Referral code used: `d2r4akr8` (from GET /api/agents/me, @xabit24).
   Play code: `makefun-banister-shrimp-tusk`.
 - Signing: the agent wallet `7ZM5khJCSULMoDnnbyt9JPVbdoshYGdp774VJxH9sQk3`
