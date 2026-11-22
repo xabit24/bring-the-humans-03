@@ -8,33 +8,60 @@ $14). Ends Tue 24 Nov 2026 19:00 UTC (25 Nov 02:00 WIB). Entry by @xabit24
 
 ## The video
 
-`ad.mp4` — 1080×1920 (9:16), 60 fps, 18.0 s, H.264 + AAC, ~1.6 MB.
+`ad.mp4` — 1080×1920 (9:16), 60 fps, 18.0 s, H.264 + AAC, ~1.9 MB.
 An original vertical ad, rendered with ffmpeg from this repo. No copied
 footage, no downloaded clips. Text windows are half-open [start, end),
 so every segment cuts cleanly — no frame shows two segments at once
 (the first render used inclusive `between()` windows and garbled the
 1.5 s and 11 s boundary frames; fixed in review, re-rendered byte-identically).
+The on-screen text and the voiceover are in Bahasa Indonesia (the target
+viewer is Indonesian), so text and voice say the same thing.
 
 ### Hooks — why this ad is built to stop the scroll
 
 The bounty ranks by views and @maincore69 has 6 followers, so the ad lives
 or dies on its first 1–3 seconds. The hooks were brainstormed for that:
 
-- **Pattern interrupt:** "STOP SCROLLING." fills the first frame, huge,
+- **Pattern interrupt:** "BERHENTI SCROLLING!" fills the first frame, huge,
   next to the brand badge.
-- **Bold money claim + pain point:** "YOUR AI AGENT EARNS REAL MONEY." —
+- **Bold money claim + pain point:** "AGEN AI KAMU DAPAT UANG ASLI." —
   your AI is sitting idle while others get paid.
 - **FOMO / social proof:** the ghost crew on laptops, one lifting a trophy
-  — "AI AGENTS ARE WINNING REAL CASH ON make.fun".
-- **The number:** "$500 ON THE TABLE. TOP 20 GET PAID." — the prize, big
+  — "AGEN-AGEN AI MENANG UANG TUNAI DI make.fun".
+- **The number:** "$500 MENANTI. 20 TERATAS DIBAYAR." — the prize, big
   enough to read at a glance.
-- **CTA:** "ENTER YOUR AI AGENT ON make.fun — Build it. Get paid."
+- **CTA:** "DAFTARKAN AGEN AI DI make.fun — Buat. Dibayar."
 - **End card:** make.fun's referral card with the entrant's own referral
   code `d2r4akr8` typed into its field.
 
 Arc: hook (0–3 s) → what it is (3–7 s) → proof/FOMO (7–11 s) →
 CTA (11–15.5 s) → end card (15.5–18 s). The brand badge is on screen from
 the very first frame until the end card.
+
+### Voiceover (Bahasa Indonesia)
+
+Voiceover only, no music (Boss R's choice). Generated in-session with
+Piper (`id_ID-news_tts-medium`, a local neural TTS — no paid API, no
+copyrighted voice), one clip per segment, mixed into a single 18 s track
+(`assets/voiceover-id.wav`, 44.1 kHz mono, -1 dB peak safety) and muxed
+as the video's AAC track by `main.ts`. The script, with timing:
+
+| Window | Voiceover |
+|---|---|
+| 0–1.5 s | "Berhenti scrolling!" |
+| 1.5–3.5 s | "Agen AI kamu dapat uang asli." |
+| 3.5–7.5 s | "Agen-agen AI menang uang tunai asli di make.fun." |
+| 7.5–11 s | "Lima ratus dolar menanti. Dua puluh teratas dibayar." |
+| 11–15.5 s | "Daftarkan agen AI kamu di make.fun. Buat, lalu dibayar." |
+| 15.5–18 s | "Gunakan kode d2r4akr8." |
+
+Each clip was fitted to its window (brisker `length-scale` where needed:
+0.85 most segments, 0.79 for the 2 s one, 0.70 for the code readout) and
+silence-trimmed; every window measures audible in the final video
+(mean -15 to -18 dB). The on-screen text was translated to Indonesian too,
+so text and voice match — that reads best for an Indonesian viewer on a
+phone. The caption stays as the bounty requires (English, with the play
+code); the referral code and play code are unchanged.
 
 ### Assets (all in `assets/`, used as they are)
 
@@ -45,14 +72,18 @@ edition 2026-11-21): brand badge `makefun-badge-9x16.png`, ghost crew
 (`Inter-Bold.otf`, on-screen text) and JetBrains Mono Bold
 (`JetBrainsMono-Bold.ttf`, the referral code). Colours: magenta #c41c83,
 ink #191419, white. `bg-1080x1920.png` is the ad's own background (dark
-ink with a magenta glow, generated in the session).
+ink with a magenta glow, generated in the session). `voiceover-id.wav`
+is the ad's own Indonesian voiceover (Piper, see above), also generated
+in the session.
 
 ## Reproduce
 
 `main.ts` (Node 22, standard library only) copies `VIDEO.json` to
 `/output/` and re-renders the video to `/output/ad.mp4` with ffmpeg
-(a prerequisite tool). If ffmpeg or an asset is missing it logs the fact
-and still exits 0 — the VIDEO.json copy is what the entry needs.
+(a prerequisite tool), muxing the Indonesian voiceover
+(`assets/voiceover-id.wav`) in as the AAC audio track. If ffmpeg or an
+asset is missing it logs the fact and still exits 0 — the VIDEO.json copy
+is what the entry needs.
 
 ```sh
 mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
