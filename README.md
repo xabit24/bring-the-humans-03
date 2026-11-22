@@ -8,29 +8,31 @@ $14). Ends Tue 24 Nov 2026 19:00 UTC (25 Nov 02:00 WIB). Entry by @xabit24
 
 ## The video
 
-`ad.mp4` — 1080×1920 (9:16), 60 fps, 18.0 s, H.264 + AAC, ~1.9 MB.
+`ad.mp4` — 1080×1920 (9:16), 60 fps, 22.0 s, H.264 + AAC, ~2.1 MB.
 An original vertical ad, rendered with ffmpeg from this repo. No copied
 footage, no downloaded clips. Text windows are half-open [start, end),
 so every segment cuts cleanly — no frame shows two segments at once
 (the first render used inclusive `between()` windows and garbled the
 1.5 s and 11 s boundary frames; fixed in review, re-rendered byte-identically).
-The on-screen text and the voiceover are in Bahasa Indonesia (the target
-viewer is Indonesian), so text and voice say the same thing.
+The on-screen text is in ENGLISH (Inter Bold — make.fun's own font from
+their press pack) and the voiceover is in Bahasa Indonesia (Boss R's own
+voice): the English text is the translation of what he is saying, line
+for line, in the same order.
 
 ### Hooks — why this ad is built to stop the scroll
 
 The bounty ranks by views and @maincore69 has 6 followers, so the ad lives
 or dies on its first 1–3 seconds. The hooks were brainstormed for that:
 
-- **Pattern interrupt:** "BERHENTI SCROLLING!" fills the first frame, huge,
+- **Pattern interrupt:** "STOP SCROLLING." fills the first frame, huge,
   next to the brand badge.
-- **Bold money claim + pain point:** "AGEN AI KAMU DAPAT UANG ASLI." —
+- **Bold money claim + pain point:** "YOUR AI AGENT EARNS REAL MONEY." —
   your AI is sitting idle while others get paid.
 - **FOMO / social proof:** the ghost crew on laptops, one lifting a trophy
-  — "AGEN-AGEN AI MENANG UANG TUNAI DI make.fun".
-- **The number:** "$500 MENANTI. 20 TERATAS DIBAYAR." — the prize, big
+  — "AI AGENTS ARE WINNING REAL CASH ON make.fun".
+- **The number:** "$500 ON THE TABLE. TOP 20 GET PAID." — the prize, big
   enough to read at a glance.
-- **CTA:** "DAFTARKAN AGEN AI DI make.fun — Buat. Dibayar."
+- **CTA:** "ENTER YOUR AI AGENT ON make.fun — Build it. Get paid."
 - **End card:** make.fun's referral card with the entrant's own referral
   code `d2r4akr8` typed into its field.
 
@@ -67,9 +69,12 @@ code spelling needs ~6.2 s and the end card was only 2.5 s — speeding it
 to 2.5 s would take ~2.6x and be unintelligible, so the end card is held
 for 6.5 s instead and the video is now 22 s (still short for TikTok).
 Every window measures audible in the final video (mean -15 to -16 dB).
-The on-screen text is in Indonesian too, so text and voice match. The
-caption stays as the bounty requires (English, with the play code); the
-referral code and play code are unchanged.
+The on-screen text is back in English (reverted from the Indonesian
+version Boss R said looked messy) and is the translation of his
+Indonesian voiceover, in the same order; the font is Inter Bold,
+make.fun's own press-pack font. The caption stays as the bounty requires
+(English, with the play code); the referral code and play code are
+unchanged.
 
 ### Assets (all in `assets/`, used as they are)
 

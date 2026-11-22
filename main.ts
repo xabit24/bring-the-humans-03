@@ -5,19 +5,21 @@
 // and hands in its address.
 //
 // The ad (1080x1920, 60fps, 22s) is an original vertical video for make.fun,
-// made in the agent session that wrote this file. The on-screen text and the
-// voiceover are in Bahasa Indonesia — the target viewer is Indonesian
-// (TikTok @maincore69), so text and voice say the same thing:
-//   0.0-1.5s  hook: "BERHENTI" / "SCROLLING!" (pattern interrupt)
+// made in the agent session that wrote this file. The on-screen text is in
+// ENGLISH (Inter Bold, make.fun's own font from their press pack) and the
+// voiceover is in Bahasa Indonesia — the entrant himself reads it, and the
+// English text on screen is the translation of what he is saying, in the
+// same order:
+//   0.0-1.5s  hook: "STOP" / "SCROLLING." (pattern interrupt)
 //             voice: "Berhenti scrolling!"
-//   1.5-3.5s  "AGEN AI KAMU" / "DAPAT UANG ASLI."
+//   1.5-3.5s  "YOUR AI AGENT" / "EARNS REAL MONEY."
 //             voice: "Agen AI kamu dapat uang asli."
 //   3.5-7.5s  ghost crew on laptops, one lifting a trophy (press pack) +
-//             "AGEN-AGEN AI MENANG" / "UANG TUNAI DI make.fun"
+//             "AI AGENTS ARE WINNING" / "REAL CASH ON make.fun"
 //             voice: "Agen-agen AI menang uang tunai asli di make.fun."
-//   7.5-11s   "$500" / "MENANTI" / "20 TERATAS DIBAYAR."
+//   7.5-11s   "$500" / "ON THE TABLE" / "TOP 20 GET PAID."
 //             voice: "Lima ratus dolar menanti. Dua puluh teratas dibayar."
-//  11.0-15.5s "DAFTARKAN" / "AGEN AI" / "DI make.fun" / "Buat. Dibayar."
+//  11.0-15.5s "ENTER YOUR" / "AI AGENT" / "ON make.fun" / "Build it. Get paid."
 //             voice: "Daftarkan agen AI kamu di make.fun. Buat, lalu dibayar."
 //  15.5-22s   make.fun's referral end card (press pack) with the entrant's
 //             own referral code typed into its field.
@@ -88,25 +90,29 @@ const assets = (name: string) => join(BOT_DIR, 'assets', name);
 // Text windows are half-open [start, end) via gte*lt, so no frame shows
 // two segments at once: between() is inclusive at both ends and garbled
 // the boundary frames (1.5s, 11s) with both texts on top of each other.
-// On-screen text is Bahasa Indonesia, matching the voiceover word for word.
+// On-screen text is ENGLISH in Inter Bold — make.fun's own font from their
+// press pack — and is the translation of the Indonesian voiceover, line for
+// line, in the same order. The wording, sizes and positions are the v1
+// English ones (the shorter English lines read clean again after the
+// Indonesian version looked messy).
 function bodyFilter(interFont: string): string {
   return [
     '[0:v]fps=30,format=yuv420p[bg];',
     '[1:v]scale=638:900:flags=lanczos,format=yuva420p,fade=t=in:st=3.5:d=0.4:alpha=1,fade=t=out:st=7.1:d=0.4:alpha=1[ghost];',
     '[bg][ghost]overlay=221:350[base];',
-    `[base]drawtext=fontfile=${interFont}:text='BERHENTI':fontsize=160:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=600:enable='gte(t,0)*lt(t,1.5)'[t1];`,
-    `[t1]drawtext=fontfile=${interFont}:text='SCROLLING!':fontsize=105:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=790:enable='gte(t,0)*lt(t,1.5)'[t2];`,
-    `[t2]drawtext=fontfile=${interFont}:text='AGEN AI KAMU':fontsize=85:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=650:enable='gte(t,1.5)*lt(t,3.5)'[t3];`,
-    `[t3]drawtext=fontfile=${interFont}:text='DAPAT UANG ASLI.':fontsize=80:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=770:enable='gte(t,1.5)*lt(t,3.5)'[t4];`,
-    `[t4]drawtext=fontfile=${interFont}:text='AGEN-AGEN AI MENANG':fontsize=65:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=1330:enable='gte(t,3.5)*lt(t,7.5)'[t5];`,
-    `[t5]drawtext=fontfile=${interFont}:text='UANG TUNAI DI make.fun':fontsize=65:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=1420:enable='gte(t,3.5)*lt(t,7.5)'[t6];`,
+    `[base]drawtext=fontfile=${interFont}:text='STOP':fontsize=170:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=600:enable='gte(t,0)*lt(t,1.5)'[t1];`,
+    `[t1]drawtext=fontfile=${interFont}:text='SCROLLING.':fontsize=105:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=790:enable='gte(t,0)*lt(t,1.5)'[t2];`,
+    `[t2]drawtext=fontfile=${interFont}:text='YOUR AI AGENT':fontsize=85:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=650:enable='gte(t,1.5)*lt(t,3.5)'[t3];`,
+    `[t3]drawtext=fontfile=${interFont}:text='EARNS REAL MONEY.':fontsize=80:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=770:enable='gte(t,1.5)*lt(t,3.5)'[t4];`,
+    `[t4]drawtext=fontfile=${interFont}:text='AI AGENTS ARE WINNING':fontsize=65:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=1330:enable='gte(t,3.5)*lt(t,7.5)'[t5];`,
+    `[t5]drawtext=fontfile=${interFont}:text='REAL CASH ON make.fun':fontsize=65:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=1420:enable='gte(t,3.5)*lt(t,7.5)'[t6];`,
     `[t6]drawtext=fontfile=${interFont}:text='$500':fontsize=200:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=600:enable='gte(t,7.5)*lt(t,11.0)'[t7];`,
-    `[t7]drawtext=fontfile=${interFont}:text='MENANTI':fontsize=80:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=850:enable='gte(t,7.5)*lt(t,11.0)'[t8];`,
-    `[t8]drawtext=fontfile=${interFont}:text='20 TERATAS DIBAYAR.':fontsize=70:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=980:enable='gte(t,7.5)*lt(t,11.0)'[t9];`,
-    `[t9]drawtext=fontfile=${interFont}:text='DAFTARKAN':fontsize=85:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=620:enable='gte(t,11.0)*lt(t,15.5)'[t10];`,
-    `[t10]drawtext=fontfile=${interFont}:text='AGEN AI':fontsize=110:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=730:enable='gte(t,11.0)*lt(t,15.5)'[t11];`,
-    `[t11]drawtext=fontfile=${interFont}:text='DI make.fun':fontsize=75:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=880:enable='gte(t,11.0)*lt(t,15.5)'[t12];`,
-    `[t12]drawtext=fontfile=${interFont}:text='Buat. Dibayar.':fontsize=50:fontcolor=white:borderw=2:bordercolor=black@0.55:x=(w-text_w)/2:y=1000:enable='gte(t,11.0)*lt(t,15.5)'[v]`,
+    `[t7]drawtext=fontfile=${interFont}:text='ON THE TABLE':fontsize=80:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=850:enable='gte(t,7.5)*lt(t,11.0)'[t8];`,
+    `[t8]drawtext=fontfile=${interFont}:text='TOP 20 GET PAID.':fontsize=70:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=980:enable='gte(t,7.5)*lt(t,11.0)'[t9];`,
+    `[t9]drawtext=fontfile=${interFont}:text='ENTER YOUR':fontsize=85:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=620:enable='gte(t,11.0)*lt(t,15.5)'[t10];`,
+    `[t10]drawtext=fontfile=${interFont}:text='AI AGENT':fontsize=110:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=730:enable='gte(t,11.0)*lt(t,15.5)'[t11];`,
+    `[t11]drawtext=fontfile=${interFont}:text='ON make.fun':fontsize=75:fontcolor=white:borderw=3:bordercolor=black@0.55:x=(w-text_w)/2:y=880:enable='gte(t,11.0)*lt(t,15.5)'[t12];`,
+    `[t12]drawtext=fontfile=${interFont}:text='Build it. Get paid.':fontsize=50:fontcolor=white:borderw=2:bordercolor=black@0.55:x=(w-text_w)/2:y=1000:enable='gte(t,11.0)*lt(t,15.5)'[v]`,
   ].join('\n');
 }
 
