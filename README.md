@@ -35,16 +35,18 @@ or dies on its first 1–3 seconds. The hooks were brainstormed for that:
   code `d2r4akr8` typed into its field.
 
 Arc: hook (0–3 s) → what it is (3–7 s) → proof/FOMO (7–11 s) →
-CTA (11–15.5 s) → end card (15.5–18 s). The brand badge is on screen from
+CTA (11–15.5 s) → end card (15.5–22 s). The brand badge is on screen from
 the very first frame until the end card.
 
-### Voiceover (Bahasa Indonesia)
+### Voiceover (Bahasa Indonesia) — Boss R's own voice
 
-Voiceover only, no music (Boss R's choice). Generated in-session with
-Piper (`id_ID-news_tts-medium`, a local neural TTS — no paid API, no
-copyrighted voice), one clip per segment, mixed into a single 18 s track
-(`assets/voiceover-id.wav`, 44.1 kHz mono, -1 dB peak safety) and muxed
-as the video's AAC track by `main.ts`. The script, with timing:
+Voiceover only, no music (Boss R's choice). The voiceover is now Boss R
+himself: he recorded all six lines on his phone and sent the recording
+over WhatsApp (`assets/voiceover-bossr.m4a`, 24.8 s, his own voice, no
+copyright issue). It replaces the earlier Piper TTS voiceover
+(`id_ID-news_tts-medium`), which he said sounded bad. The script, with
+timing — he reads "make.fun" as "make dot fun" and spells the code
+letter by letter, which is clearer than reading it as one word:
 
 | Window | Voiceover |
 |---|---|
@@ -53,15 +55,21 @@ as the video's AAC track by `main.ts`. The script, with timing:
 | 3.5–7.5 s | "Agen-agen AI menang uang tunai asli di make.fun." |
 | 7.5–11 s | "Lima ratus dolar menanti. Dua puluh teratas dibayar." |
 | 11–15.5 s | "Daftarkan agen AI kamu di make.fun. Buat, lalu dibayar." |
-| 15.5–18 s | "Gunakan kode d2r4akr8." |
+| 15.5–22 s | "Gunakan kode berikut. D dua R empat A K R delapan." |
 
-Each clip was fitted to its window (brisker `length-scale` where needed:
-0.85 most segments, 0.79 for the 2 s one, 0.70 for the code readout) and
-silence-trimmed; every window measures audible in the final video
-(mean -15 to -18 dB). The on-screen text was translated to Indonesian too,
-so text and voice match — that reads best for an Indonesian viewer on a
-phone. The caption stays as the bounty requires (English, with the play
-code); the referral code and play code are unchanged.
+The fit (`assets/voiceover-bossr-fit.wav`, 44.1 kHz mono, 22 s, -1 dB
+peak safety): his recording is 24.8 s but the video was 18 s, so it does
+not fit as-is. Leading/trailing silence trimmed, inter-line pauses cut
+to ~0.15 s, line 3 sped 1.12x (4.39 s into its 4.0 s window); lines 1, 2,
+4, 5 and 6 run at natural speed; levels normalised to mean ~-15.5 dB per
+window. One line genuinely cannot fit its old window: his letter-by-letter
+code spelling needs ~6.2 s and the end card was only 2.5 s — speeding it
+to 2.5 s would take ~2.6x and be unintelligible, so the end card is held
+for 6.5 s instead and the video is now 22 s (still short for TikTok).
+Every window measures audible in the final video (mean -15 to -16 dB).
+The on-screen text is in Indonesian too, so text and voice match. The
+caption stays as the bounty requires (English, with the play code); the
+referral code and play code are unchanged.
 
 ### Assets (all in `assets/`, used as they are)
 
@@ -72,16 +80,16 @@ edition 2026-11-21): brand badge `makefun-badge-9x16.png`, ghost crew
 (`Inter-Bold.otf`, on-screen text) and JetBrains Mono Bold
 (`JetBrainsMono-Bold.ttf`, the referral code). Colours: magenta #c41c83,
 ink #191419, white. `bg-1080x1920.png` is the ad's own background (dark
-ink with a magenta glow, generated in the session). `voiceover-id.wav`
-is the ad's own Indonesian voiceover (Piper, see above), also generated
-in the session.
+ink with a magenta glow, generated in the session).
+`voiceover-bossr.m4a` is the entrant's own voiceover recording and
+`voiceover-bossr-fit.wav` the fitted 22 s mix (see Voiceover above).
 
 ## Reproduce
 
 `main.ts` (Node 22, standard library only) copies `VIDEO.json` to
 `/output/` and re-renders the video to `/output/ad.mp4` with ffmpeg
-(a prerequisite tool), muxing the Indonesian voiceover
-(`assets/voiceover-id.wav`) in as the AAC audio track. If ffmpeg or an
+(a prerequisite tool), muxing the entrant's own voiceover
+(`assets/voiceover-bossr-fit.wav`) in as the AAC audio track. If ffmpeg or an
 asset is missing it logs the fact and still exits 0 — the VIDEO.json copy
 is what the entry needs.
 

@@ -4,7 +4,7 @@
 // people enter them with their agents. This program builds the entry's video
 // and hands in its address.
 //
-// The ad (1080x1920, 60fps, 18s) is an original vertical video for make.fun,
+// The ad (1080x1920, 60fps, 22s) is an original vertical video for make.fun,
 // made in the agent session that wrote this file. The on-screen text and the
 // voiceover are in Bahasa Indonesia — the target viewer is Indonesian
 // (TikTok @maincore69), so text and voice say the same thing:
@@ -19,13 +19,24 @@
 //             voice: "Lima ratus dolar menanti. Dua puluh teratas dibayar."
 //  11.0-15.5s "DAFTARKAN" / "AGEN AI" / "DI make.fun" / "Buat. Dibayar."
 //             voice: "Daftarkan agen AI kamu di make.fun. Buat, lalu dibayar."
-//  15.5-18s   make.fun's referral end card (press pack) with the entrant's
+//  15.5-22s   make.fun's referral end card (press pack) with the entrant's
 //             own referral code typed into its field.
-//             voice: "Gunakan kode d2r4akr8."
-// The voiceover (assets/voiceover-id.wav, 18s, Piper id_ID-news_tts-medium,
-// generated in-session, mixed in with ffmpeg) is part of the build: main.ts
-// muxes it as the video's AAC audio track. make.fun's brand badge (press
-// pack) sits top-left from the very first frame until the end card comes in.
+//             voice: "Gunakan kode berikut. D dua R empat A K R delapan."
+// The voiceover is the entrant's OWN recording (assets/voiceover-bossr.m4a,
+// 24.8s, sent by Boss R himself over WhatsApp; he reads all six lines and
+// spells the code letter by letter), fitted in-session to
+// assets/voiceover-bossr-fit.wav (22s) and mixed in with ffmpeg: main.ts
+// muxes it as the video's AAC audio track. It replaces the earlier Piper
+// TTS voiceover, which Boss R said sounded bad. The end card runs 6.5s
+// (not 2.5s) because his letter-by-letter code spelling needs ~6.2s and
+// cannot fit the old 2.5s window at intelligible speed — speeding it to
+// 2.5s would take ~2.6x and be unintelligible, so the card is held longer
+// instead; the video is 22s, still short for TikTok. The fit: leading and
+// trailing silence trimmed, inter-line pauses cut to ~0.15s, line 3 sped
+// 1.12x (4.39s into its 4.0s window); lines 1, 2, 4, 5 and 6 run at natural
+// speed; levels normalised to mean ~-15.5 dB per window with -1 dB peak
+// safety. make.fun's brand badge (press pack) sits top-left from the very
+// first frame until the end card comes in.
 // Every make.fun mark, wordmark and colour comes from make.fun's press pack
 // (https://make.fun/press/manifest.json) and is used as it is. The referral
 // code below is the account's own, read from GET /api/agents/me
@@ -37,7 +48,7 @@
 //      the house reads the video itself from TikTok.
 //   2. Reproduces the video to /output/ad.mp4 with ffmpeg (a prerequisite
 //      tool, not an npm install), from the vendored assets in assets/.
-//      The Indonesian voiceover (assets/voiceover-id.wav) is muxed in as
+//      The entrant's own voiceover (assets/voiceover-bossr-fit.wav) is muxed in as
 //      the video's AAC audio track. If ffmpeg or an asset is missing, it
 //      logs the fact and still exits 0: the VIDEO.json copy above is what
 //      the entry needs, and the video is already rendered and posted. The
@@ -59,10 +70,14 @@ const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 // Read from GET /api/agents/me (referrals.code) for @xabit24.
 const REFERRAL_CODE = 'd2r4akr8';
 
-// The ad's shape. The body runs 15.5s; the end card (2.5s) is laid over
-// the last frame held for 2.5s, so the finished video is 18s.
+// The ad's shape. The body runs 15.5s; the end card (6.5s) is laid over
+// the last frame held for 6.5s, so the finished video is 22s. The card is
+// 6.5s (not 2.5s) because the entrant's own letter-by-letter code spelling
+// needs ~6.2s: the press-pack card video itself is only 2.5s, so its last
+// frame is held (tpad, see finalFilter) for the remaining 4s.
 const BODY_SECONDS = 15.5;
-const CARD_SECONDS = 2.5;
+const CARD_SECONDS = 6.5;
+const CARD_VIDEO_SECONDS = 2.5; // the press-pack end card's own length
 const CARD_START = 15.533333; // body duration, from ffprobe (466 frames at 30fps)
 const CODE_AT = 16.966333; // CARD_START + 1.433s, when the field comes to rest
 
@@ -109,7 +124,7 @@ function finalFilter(monoFont: string): string {
     `[base][2:v]overlay=enable='lt(t,${t})',format=yuva420p,split[clip][soft];`,
     `[soft]gblur=sigma=28,eq=saturation=0.35,fade=t=in:st=${t}:d=0.8:alpha=1[soft];`,
     '[clip][soft]overlay[bg];',
-    `[1:v]format=yuva420p,setpts=PTS-STARTPTS+${t}/TB[card];`,
+    `[1:v]format=yuva420p,setpts=PTS-STARTPTS+${t}/TB,tpad=stop_mode=clone:stop_duration=${CARD_SECONDS - CARD_VIDEO_SECONDS}[card];`,
     `[bg][card]overlay=eof_action=pass,drawbox=x=208:y=1230:w=9:h=82:color=white:t=fill:enable='gte(t,${at})',drawtext=fontfile=${monoFont}:text=${REFERRAL_CODE}:fontsize=62:fontcolor=0x191419:x=210:y=1271-(ascent-descent)/2:enable='gte(t,${at})'[v]`,
   ].join('\n');
 }
@@ -139,7 +154,7 @@ try {
 // 2. Reproduce the video, best effort. The score never depends on this:
 // the house reads the video from TikTok. So a missing ffmpeg or asset is
 // a note, not a failure.
-const needed = ['bg-1080x1920.png', 'ghost-pile-trophy.png', 'makefun-badge-9x16.png', 'makefun-card-9x16-transparent.webm', 'Inter-Bold.otf', 'JetBrainsMono-Bold.ttf', 'voiceover-id.wav'];
+const needed = ['bg-1080x1920.png', 'ghost-pile-trophy.png', 'makefun-badge-9x16.png', 'makefun-card-9x16-transparent.webm', 'Inter-Bold.otf', 'JetBrainsMono-Bold.ttf', 'voiceover-bossr-fit.wav'];
 const missing = needed.filter((n) => !existsSync(assets(n)));
 if (!hasFfmpeg()) {
   console.log('bring-the-humans-03: ffmpeg not found; VIDEO.json copied, video not re-rendered.');
@@ -152,11 +167,11 @@ if (!hasFfmpeg()) {
     console.log(`bring-the-humans-03: body render failed (${bodyRun.error}); VIDEO.json copied, video not re-rendered.`);
   } else {
     const ad = join(OUTPUT_DIR, 'ad.mp4');
-    const finalRun = run('ffmpeg', ['-y', '-v', 'error', '-i', body, '-c:v', 'libvpx-vp9', '-i', assets('makefun-card-9x16-transparent.webm'), '-i', assets('makefun-badge-9x16.png'), '-i', assets('voiceover-id.wav'), '-filter_complex', finalFilter(assets('JetBrainsMono-Bold.ttf')), '-map', '[v]', '-map', '3:a', '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18', '-c:a', 'aac', '-b:a', '128k', '-fflags', '+bitexact', '-flags', '+bitexact', '-metadata', 'creation_time=', '-movflags', '+faststart', ad]);
+    const finalRun = run('ffmpeg', ['-y', '-v', 'error', '-i', body, '-c:v', 'libvpx-vp9', '-i', assets('makefun-card-9x16-transparent.webm'), '-i', assets('makefun-badge-9x16.png'), '-i', assets('voiceover-bossr-fit.wav'), '-filter_complex', finalFilter(assets('JetBrainsMono-Bold.ttf')), '-map', '[v]', '-map', '3:a', '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18', '-c:a', 'aac', '-b:a', '128k', '-fflags', '+bitexact', '-flags', '+bitexact', '-metadata', 'creation_time=', '-movflags', '+faststart', ad]);
     if (!finalRun.ok) {
       console.log(`bring-the-humans-03: final render failed (${finalRun.error}); VIDEO.json copied, video not re-rendered.`);
     } else {
-      console.log(`bring-the-humans-03: reproduced ${ad} (1080x1920, 18s, Indonesian voiceover) and copied VIDEO.json.`);
+      console.log(`bring-the-humans-03: reproduced ${ad} (1080x1920, 22s, Boss R's own Indonesian voiceover) and copied VIDEO.json.`);
     }
   }
 }
