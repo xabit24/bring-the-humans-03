@@ -1,0 +1,2557 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 17,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "duplicate_media_discovery_risk",
+        "severity": "warning",
+        "message": "Detected 4 matching img entries with the same source/start/duration.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Avoid duplicated media nodes that can be discovered twice during compilation."
+      },
+      {
+        "code": "gsap_timeline_set_initial_hide",
+        "severity": "warning",
+        "message": "Initial hidden state for \"#s2\" is set via tl.set(...) at position 0 inside the paused timeline. A zero-duration set at 0 does not render while the playhead sits exactly at 0, so frame 0 shows the un-hidden state.",
+        "selector": "#s2",
+        "dataAttributes": {},
+        "sourceFile": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use gsap.set(...) (immediate, outside the timeline) for initial states, or author the hidden state directly in CSS/attributes."
+      },
+      {
+        "code": "gsap_timeline_set_initial_hide",
+        "severity": "warning",
+        "message": "Initial hidden state for \"#s3\" is set via tl.set(...) at position 0 inside the paused timeline. A zero-duration set at 0 does not render while the playhead sits exactly at 0, so frame 0 shows the un-hidden state.",
+        "selector": "#s3",
+        "dataAttributes": {},
+        "sourceFile": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use gsap.set(...) (immediate, outside the timeline) for initial states, or author the hidden state directly in CSS/attributes."
+      },
+      {
+        "code": "gsap_timeline_set_initial_hide",
+        "severity": "warning",
+        "message": "Initial hidden state for \"#s4\" is set via tl.set(...) at position 0 inside the paused timeline. A zero-duration set at 0 does not render while the playhead sits exactly at 0, so frame 0 shows the un-hidden state.",
+        "selector": "#s4",
+        "dataAttributes": {},
+        "sourceFile": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use gsap.set(...) (immediate, outside the timeline) for initial states, or author the hidden state directly in CSS/attributes."
+      },
+      {
+        "code": "gsap_timeline_set_initial_hide",
+        "severity": "warning",
+        "message": "Initial hidden state for \"#cap1, #sub1\" is set via tl.set(...) at position 0 inside the paused timeline. A zero-duration set at 0 does not render while the playhead sits exactly at 0, so frame 0 shows the un-hidden state.",
+        "selector": "#cap1, #sub1",
+        "dataAttributes": {},
+        "sourceFile": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use gsap.set(...) (immediate, outside the timeline) for initial states, or author the hidden state directly in CSS/attributes."
+      },
+      {
+        "code": "gsap_timeline_set_initial_hide",
+        "severity": "warning",
+        "message": "Initial hidden state for \"#cap2\" is set via tl.set(...) at position 0 inside the paused timeline. A zero-duration set at 0 does not render while the playhead sits exactly at 0, so frame 0 shows the un-hidden state.",
+        "selector": "#cap2",
+        "dataAttributes": {},
+        "sourceFile": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use gsap.set(...) (immediate, outside the timeline) for initial states, or author the hidden state directly in CSS/attributes."
+      },
+      {
+        "code": "gsap_timeline_set_initial_hide",
+        "severity": "warning",
+        "message": "Initial hidden state for \"#cap3a, #cap3b\" is set via tl.set(...) at position 0 inside the paused timeline. A zero-duration set at 0 does not render while the playhead sits exactly at 0, so frame 0 shows the un-hidden state.",
+        "selector": "#cap3a, #cap3b",
+        "dataAttributes": {},
+        "sourceFile": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use gsap.set(...) (immediate, outside the timeline) for initial states, or author the hidden state directly in CSS/attributes."
+      },
+      {
+        "code": "gsap_timeline_set_initial_hide",
+        "severity": "warning",
+        "message": "Initial hidden state for \"#cap4, #sub4\" is set via tl.set(...) at position 0 inside the paused timeline. A zero-duration set at 0 does not render while the playhead sits exactly at 0, so frame 0 shows the un-hidden state.",
+        "selector": "#cap4, #sub4",
+        "dataAttributes": {},
+        "sourceFile": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use gsap.set(...) (immediate, outside the timeline) for initial states, or author the hidden state directly in CSS/attributes."
+      },
+      {
+        "code": "gsap_timeline_set_initial_hide",
+        "severity": "warning",
+        "message": "Initial hidden state for \"#card\" is set via tl.set(...) at position 0 inside the paused timeline. A zero-duration set at 0 does not render while the playhead sits exactly at 0, so frame 0 shows the un-hidden state.",
+        "selector": "#card",
+        "dataAttributes": {},
+        "sourceFile": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use gsap.set(...) (immediate, outside the timeline) for initial states, or author the hidden state directly in CSS/attributes."
+      },
+      {
+        "code": "gsap_timeline_set_initial_hide",
+        "severity": "warning",
+        "message": "Initial hidden state for \"#check\" is set via tl.set(...) at position 0 inside the paused timeline. A zero-duration set at 0 does not render while the playhead sits exactly at 0, so frame 0 shows the un-hidden state.",
+        "selector": "#check",
+        "dataAttributes": {},
+        "sourceFile": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use gsap.set(...) (immediate, outside the timeline) for initial states, or author the hidden state directly in CSS/attributes."
+      },
+      {
+        "code": "gsap_timeline_set_initial_hide",
+        "severity": "warning",
+        "message": "Initial hidden state for \"#big500\" is set via tl.set(...) at position 0 inside the paused timeline. A zero-duration set at 0 does not render while the playhead sits exactly at 0, so frame 0 shows the un-hidden state.",
+        "selector": "#big500",
+        "dataAttributes": {},
+        "sourceFile": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use gsap.set(...) (immediate, outside the timeline) for initial states, or author the hidden state directly in CSS/attributes."
+      },
+      {
+        "code": "gsap_timeline_set_initial_hide",
+        "severity": "warning",
+        "message": "Initial hidden state for \".code\" is set via tl.set(...) at position 0 inside the paused timeline. A zero-duration set at 0 does not render while the playhead sits exactly at 0, so frame 0 shows the un-hidden state.",
+        "selector": ".code",
+        "dataAttributes": {},
+        "sourceFile": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use gsap.set(...) (immediate, outside the timeline) for initial states, or author the hidden state directly in CSS/attributes."
+      },
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "This HTML file has 4 timed elements. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into separate .html files under compositions/ and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s1\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s1",
+        "dataAttributes": {},
+        "sourceFile": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s1\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s2\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s2",
+        "dataAttributes": {},
+        "sourceFile": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s2\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s3\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s3",
+        "dataAttributes": {},
+        "sourceFile": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s3\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s4\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s4",
+        "dataAttributes": {},
+        "sourceFile": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s4\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      }
+    ],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 16,
+    "infoCount": 39,
+    "findings": [
+      {
+        "code": "content_overlap",
+        "severity": "warning",
+        "time": 17.333,
+        "selector": "#s3 > div:nth-of-type(8)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 848.95,
+          "top": 1008.51,
+          "right": 921.05,
+          "bottom": 1096.13,
+          "width": 72.1,
+          "height": 87.62
+        },
+        "containerSelector": "#big500",
+        "text": "$",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply. Decoration nobody needs to read can take data-layout-ignore.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 848.95,
+          "y": 1008.51,
+          "width": 72.1,
+          "height": 87.62
+        },
+        "firstSeen": 17.296,
+        "lastSeen": 17.333,
+        "occurrences": 2,
+        "heldMs": 36.999999999999034,
+        "times": [
+          17.296,
+          17.333
+        ]
+      },
+      {
+        "selector": "#z3",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 770,
+          "y": 870,
+          "width": 69.06,
+          "height": 126
+        },
+        "time": 1.333,
+        "rect": {
+          "left": 770,
+          "top": 870,
+          "right": 839.06,
+          "bottom": 996,
+          "width": 69.06,
+          "height": 126
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "Z",
+        "message": "<div> \"Z\" is outside the safe area: TikTok (right edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 1.333,
+        "lastSeen": 4,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          1.333,
+          4
+        ]
+      },
+      {
+        "selector": "#cap1",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 117.61,
+          "y": 467,
+          "width": 844.77,
+          "height": 155.89
+        },
+        "time": 1.333,
+        "rect": {
+          "left": 117.61,
+          "top": 467,
+          "right": 962.38,
+          "bottom": 622.89,
+          "width": 844.77,
+          "height": 155.89
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "me: I'll just let my AI agenthandle one small ta",
+        "message": "<div> \"me: I'll just let my AI agenthandle one small ta\" is outside the safe area: TikTok (left and right edges), YouTube Shorts (right edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 1.333,
+        "lastSeen": 4,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          1.333,
+          4
+        ]
+      },
+      {
+        "selector": "#sub1",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 244.16,
+          "y": 1739.24,
+          "width": 591.67,
+          "height": 70
+        },
+        "time": 1.333,
+        "rect": {
+          "left": 244.16,
+          "top": 1739.24,
+          "right": 835.83,
+          "bottom": 1809.24,
+          "width": 591.67,
+          "height": 70
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "what could go wrong",
+        "message": "<div> \"what could go wrong\" is outside the safe area: TikTok (bottom edge), Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 1.333,
+        "lastSeen": 4,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          1.333,
+          4
+        ]
+      },
+      {
+        "selector": "#joinBtn",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 292.44,
+          "y": 1200.5,
+          "width": 115.11,
+          "height": 59
+        },
+        "time": 14.667,
+        "rect": {
+          "left": 292.44,
+          "top": 1200.5,
+          "right": 407.55,
+          "bottom": 1259.5,
+          "width": 115.11,
+          "height": 59
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "JOIN",
+        "message": "<div> \"JOIN\" is outside the safe area: Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "selector": "#check",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 784.62,
+          "y": 1181.47,
+          "width": 70.76,
+          "height": 97.06
+        },
+        "time": 14.667,
+        "rect": {
+          "left": 784.62,
+          "top": 1181.47,
+          "right": 855.38,
+          "bottom": 1278.53,
+          "width": 70.76,
+          "height": 97.06
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "✓",
+        "message": "<div> \"✓\" is outside the safe area: TikTok (right and bottom edges), Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "selector": "#s3 > div:nth-of-type(4)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 154.05,
+          "y": -123.5,
+          "width": 41.9,
+          "height": 77
+        },
+        "time": 14.667,
+        "rect": {
+          "left": 154.05,
+          "top": -123.5,
+          "right": 195.95,
+          "bottom": -46.5,
+          "width": 41.9,
+          "height": 77
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "$",
+        "message": "<div> \"$\" is outside the safe area: TikTok (top edge), Instagram Reels (top edge), YouTube Shorts (top edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 14.667,
+        "lastSeen": 17.333,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          14.667,
+          17.333
+        ]
+      },
+      {
+        "selector": "#s3 > div:nth-of-type(5)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 327.97,
+          "y": -126.5,
+          "width": 34.06,
+          "height": 63
+        },
+        "time": 14.667,
+        "rect": {
+          "left": 327.97,
+          "top": -126.5,
+          "right": 362.03,
+          "bottom": -63.5,
+          "width": 34.06,
+          "height": 63
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "$",
+        "message": "<div> \"$\" is outside the safe area: TikTok (top edge), Instagram Reels (top edge), YouTube Shorts (top edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 14.667,
+        "lastSeen": 17.333,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          14.667,
+          17.333
+        ]
+      },
+      {
+        "selector": "#s3 > div:nth-of-type(6)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 517.08,
+          "y": -122.5,
+          "width": 45.84,
+          "height": 85
+        },
+        "time": 14.667,
+        "rect": {
+          "left": 517.08,
+          "top": -122.5,
+          "right": 562.92,
+          "bottom": -37.5,
+          "width": 45.84,
+          "height": 85
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "$",
+        "message": "<div> \"$\" is outside the safe area: TikTok (top edge), Instagram Reels (top edge), YouTube Shorts (top edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 14.667,
+        "lastSeen": 17.333,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          14.667,
+          17.333
+        ]
+      },
+      {
+        "selector": "#s3 > div:nth-of-type(7)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 687.97,
+          "y": -126.5,
+          "width": 34.06,
+          "height": 63
+        },
+        "time": 14.667,
+        "rect": {
+          "left": 687.97,
+          "top": -126.5,
+          "right": 722.03,
+          "bottom": -63.5,
+          "width": 34.06,
+          "height": 63
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "$",
+        "message": "<div> \"$\" is outside the safe area: TikTok (top edge), Instagram Reels (top edge), YouTube Shorts (top edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 14.667,
+        "lastSeen": 17.333,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          14.667,
+          17.333
+        ]
+      },
+      {
+        "selector": "#s3 > div:nth-of-type(8)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 864.05,
+          "y": -123.5,
+          "width": 41.9,
+          "height": 77
+        },
+        "time": 14.667,
+        "rect": {
+          "left": 864.05,
+          "top": -123.5,
+          "right": 905.95,
+          "bottom": -46.5,
+          "width": 41.9,
+          "height": 77
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "$",
+        "message": "<div> \"$\" is outside the safe area: TikTok (top edge), Instagram Reels (top edge), YouTube Shorts (top edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 14.667,
+        "lastSeen": 17.333,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          14.667,
+          17.333
+        ]
+      },
+      {
+        "selector": "#s3 > div:nth-of-type(9)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 224.94,
+          "y": -128,
+          "width": 30.12,
+          "height": 56
+        },
+        "time": 14.667,
+        "rect": {
+          "left": 224.94,
+          "top": -128,
+          "right": 255.06,
+          "bottom": -72,
+          "width": 30.12,
+          "height": 56
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "$",
+        "message": "<div> \"$\" is outside the safe area: TikTok (top edge), Instagram Reels (top edge), YouTube Shorts (top edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "selector": "#s3 > div:nth-of-type(10)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 584.94,
+          "y": -128,
+          "width": 30.12,
+          "height": 56
+        },
+        "time": 14.667,
+        "rect": {
+          "left": 584.94,
+          "top": -128,
+          "right": 615.06,
+          "bottom": -72,
+          "width": 30.12,
+          "height": 56
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "$",
+        "message": "<div> \"$\" is outside the safe area: TikTok (top edge), Instagram Reels (top edge), YouTube Shorts (top edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "selector": "#s3 > div:nth-of-type(11)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 944.94,
+          "y": -128,
+          "width": 30.12,
+          "height": 56
+        },
+        "time": 14.667,
+        "rect": {
+          "left": 944.94,
+          "top": -128,
+          "right": 975.06,
+          "bottom": -72,
+          "width": 30.12,
+          "height": 56
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "$",
+        "message": "<div> \"$\" is outside the safe area: TikTok (top edge), Instagram Reels (top edge), YouTube Shorts (top edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 14.667,
+        "lastSeen": 17.333,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          14.667,
+          17.333
+        ]
+      },
+      {
+        "selector": "#big500",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 180.14,
+          "y": 871.45,
+          "width": 719.71,
+          "height": 332.1
+        },
+        "time": 17.333,
+        "rect": {
+          "left": 180.14,
+          "top": 871.45,
+          "right": 899.85,
+          "bottom": 1203.55,
+          "width": 719.71,
+          "height": 332.1
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "$500",
+        "message": "<div> \"$500\" is outside the safe area: TikTok (right edge), YouTube Shorts (right edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 17.333,
+        "lastSeen": 17.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          17.333
+        ]
+      },
+      {
+        "selector": "#sub4",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 199.59,
+          "y": 1659.81,
+          "width": 680.82,
+          "height": 139.6
+        },
+        "time": 20,
+        "rect": {
+          "left": 199.59,
+          "top": 1659.81,
+          "right": 880.41,
+          "bottom": 1799.41,
+          "width": 680.82,
+          "height": 139.6
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "my AI agent earnsreal money on make.fun",
+        "message": "<div> \"my AI agent earnsreal money on make.fun\" is outside the safe area: TikTok (bottom edge), Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 20,
+        "lastSeen": 22.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          20,
+          22.667
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(4)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 154.05,
+          "top": -123.5,
+          "right": 195.95,
+          "bottom": -46.5,
+          "width": 41.9,
+          "height": 77
+        },
+        "containerSelector": "#root",
+        "text": "$",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 123.5
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 154.05,
+          "y": -123.5,
+          "width": 41.9,
+          "height": 77
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 17.333,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          14.667,
+          17.333
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(5)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 327.97,
+          "top": -126.5,
+          "right": 362.03,
+          "bottom": -63.5,
+          "width": 34.06,
+          "height": 63
+        },
+        "containerSelector": "#root",
+        "text": "$",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 126.5
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 327.97,
+          "y": -126.5,
+          "width": 34.06,
+          "height": 63
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(6)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 517.08,
+          "top": -122.5,
+          "right": 562.92,
+          "bottom": -37.5,
+          "width": 45.84,
+          "height": 85
+        },
+        "containerSelector": "#root",
+        "text": "$",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 122.5
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 517.08,
+          "y": -122.5,
+          "width": 45.84,
+          "height": 85
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(7)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 687.97,
+          "top": -126.5,
+          "right": 722.03,
+          "bottom": -63.5,
+          "width": 34.06,
+          "height": 63
+        },
+        "containerSelector": "#root",
+        "text": "$",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 126.5
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 687.97,
+          "y": -126.5,
+          "width": 34.06,
+          "height": 63
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(8)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 864.05,
+          "top": -123.5,
+          "right": 905.95,
+          "bottom": -46.5,
+          "width": 41.9,
+          "height": 77
+        },
+        "containerSelector": "#root",
+        "text": "$",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 123.5
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 864.05,
+          "y": -123.5,
+          "width": 41.9,
+          "height": 77
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(9)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 224.94,
+          "top": -128,
+          "right": 255.06,
+          "bottom": -72,
+          "width": 30.12,
+          "height": 56
+        },
+        "containerSelector": "#root",
+        "text": "$",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 128
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 224.94,
+          "y": -128,
+          "width": 30.12,
+          "height": 56
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(10)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 584.94,
+          "top": -128,
+          "right": 615.06,
+          "bottom": -72,
+          "width": 30.12,
+          "height": 56
+        },
+        "containerSelector": "#root",
+        "text": "$",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 128
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 584.94,
+          "y": -128,
+          "width": 30.12,
+          "height": 56
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(11)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 944.94,
+          "top": -128,
+          "right": 975.06,
+          "bottom": -72,
+          "width": 30.12,
+          "height": 56
+        },
+        "containerSelector": "#root",
+        "text": "$",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 128
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 944.94,
+          "y": -128,
+          "width": 30.12,
+          "height": 56
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(4)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 120,
+          "top": -140,
+          "right": 230,
+          "bottom": -30,
+          "width": 110,
+          "height": 110
+        },
+        "containerSelector": "#s3",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 140
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 120,
+          "y": -140,
+          "width": 110,
+          "height": 110
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 17.333,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          14.667,
+          17.333
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(5)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 300,
+          "top": -140,
+          "right": 390,
+          "bottom": -50,
+          "width": 90,
+          "height": 90
+        },
+        "containerSelector": "#s3",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 140
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 300,
+          "y": -140,
+          "width": 90,
+          "height": 90
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(6)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 480,
+          "top": -140,
+          "right": 600,
+          "bottom": -20,
+          "width": 120,
+          "height": 120
+        },
+        "containerSelector": "#s3",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 140
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 480,
+          "y": -140,
+          "width": 120,
+          "height": 120
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(7)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 660,
+          "top": -140,
+          "right": 750,
+          "bottom": -50,
+          "width": 90,
+          "height": 90
+        },
+        "containerSelector": "#s3",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 140
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 660,
+          "y": -140,
+          "width": 90,
+          "height": 90
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(8)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 830,
+          "top": -140,
+          "right": 940,
+          "bottom": -30,
+          "width": 110,
+          "height": 110
+        },
+        "containerSelector": "#s3",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 140
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 830,
+          "y": -140,
+          "width": 110,
+          "height": 110
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(9)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 200,
+          "top": -140,
+          "right": 280,
+          "bottom": -60,
+          "width": 80,
+          "height": 80
+        },
+        "containerSelector": "#s3",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 140
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 200,
+          "y": -140,
+          "width": 80,
+          "height": 80
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(10)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 560,
+          "top": -140,
+          "right": 640,
+          "bottom": -60,
+          "width": 80,
+          "height": 80
+        },
+        "containerSelector": "#s3",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 140
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 560,
+          "y": -140,
+          "width": 80,
+          "height": 80
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(11)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 920,
+          "top": -140,
+          "right": 1000,
+          "bottom": -60,
+          "width": 80,
+          "height": 80
+        },
+        "containerSelector": "#s3",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 140
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 920,
+          "y": -140,
+          "width": 80,
+          "height": 80
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "code": "escaped_container",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(5)",
+        "message": "Positioned element renders far outside its offset parent — its coordinates were likely computed in a different frame (canvas/viewport pixels).",
+        "rect": {
+          "left": 300,
+          "top": -140,
+          "right": 390,
+          "bottom": -50,
+          "width": 90,
+          "height": 90
+        },
+        "containerSelector": "#s3",
+        "text": "$",
+        "fixHint": "Compute left/top in the offset parent's frame (subtract its rect), or mark intentional placement with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 300,
+          "y": -140,
+          "width": 90,
+          "height": 90
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "code": "escaped_container",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(7)",
+        "message": "Positioned element renders far outside its offset parent — its coordinates were likely computed in a different frame (canvas/viewport pixels).",
+        "rect": {
+          "left": 660,
+          "top": -140,
+          "right": 750,
+          "bottom": -50,
+          "width": 90,
+          "height": 90
+        },
+        "containerSelector": "#s3",
+        "text": "$",
+        "fixHint": "Compute left/top in the offset parent's frame (subtract its rect), or mark intentional placement with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 660,
+          "y": -140,
+          "width": 90,
+          "height": 90
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "code": "escaped_container",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(9)",
+        "message": "Positioned element renders far outside its offset parent — its coordinates were likely computed in a different frame (canvas/viewport pixels).",
+        "rect": {
+          "left": 200,
+          "top": -140,
+          "right": 280,
+          "bottom": -60,
+          "width": 80,
+          "height": 80
+        },
+        "containerSelector": "#s3",
+        "text": "$",
+        "fixHint": "Compute left/top in the offset parent's frame (subtract its rect), or mark intentional placement with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 200,
+          "y": -140,
+          "width": 80,
+          "height": 80
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "code": "escaped_container",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(10)",
+        "message": "Positioned element renders far outside its offset parent — its coordinates were likely computed in a different frame (canvas/viewport pixels).",
+        "rect": {
+          "left": 560,
+          "top": -140,
+          "right": 640,
+          "bottom": -60,
+          "width": 80,
+          "height": 80
+        },
+        "containerSelector": "#s3",
+        "text": "$",
+        "fixHint": "Compute left/top in the offset parent's frame (subtract its rect), or mark intentional placement with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 560,
+          "y": -140,
+          "width": 80,
+          "height": 80
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "code": "escaped_container",
+        "severity": "info",
+        "time": 14.667,
+        "selector": "#s3 > div:nth-of-type(11)",
+        "message": "Positioned element renders far outside its offset parent — its coordinates were likely computed in a different frame (canvas/viewport pixels).",
+        "rect": {
+          "left": 920,
+          "top": -140,
+          "right": 1000,
+          "bottom": -60,
+          "width": 80,
+          "height": 80
+        },
+        "containerSelector": "#s3",
+        "text": "$",
+        "fixHint": "Compute left/top in the offset parent's frame (subtract its rect), or mark intentional placement with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 920,
+          "y": -140,
+          "width": 80,
+          "height": 80
+        },
+        "firstSeen": 14.667,
+        "lastSeen": 14.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.667
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 16.492,
+        "selector": "#s3 > div:nth-of-type(5)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 310.15,
+          "top": 458.46,
+          "right": 379.85,
+          "bottom": 507.77,
+          "width": 69.7,
+          "height": 49.31
+        },
+        "containerSelector": "#cap3b",
+        "text": "$",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply. Decoration nobody needs to read can take data-layout-ignore.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 310.15,
+          "y": 458.46,
+          "width": 69.7,
+          "height": 49.31
+        },
+        "firstSeen": 16.492,
+        "lastSeen": 16.894,
+        "occurrences": 2,
+        "heldMs": 401.9999999999975,
+        "times": [
+          16.492,
+          16.894
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 16.626,
+        "selector": "#s3 > div:nth-of-type(6)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 493.27,
+          "top": 458.27,
+          "right": 586.73,
+          "bottom": 523,
+          "width": 93.46,
+          "height": 64.73
+        },
+        "containerSelector": "#cap3b",
+        "text": "$",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply. Decoration nobody needs to read can take data-layout-ignore.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 493.27,
+          "y": 458.27,
+          "width": 93.46,
+          "height": 64.73
+        },
+        "firstSeen": 16.626,
+        "lastSeen": 17.028,
+        "occurrences": 2,
+        "heldMs": 401.9999999999975,
+        "times": [
+          16.626,
+          17.028
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 16.76,
+        "selector": "#s3 > div:nth-of-type(4)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 139.8,
+          "top": 998.07,
+          "right": 210.2,
+          "bottom": 1085.56,
+          "width": 70.4,
+          "height": 87.49
+        },
+        "containerSelector": "#big500",
+        "text": "$",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply. Decoration nobody needs to read can take data-layout-ignore.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 139.8,
+          "y": 998.07,
+          "width": 70.4,
+          "height": 87.49
+        },
+        "firstSeen": 16.76,
+        "lastSeen": 16.76,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          16.76
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 16.76,
+        "selector": "#s3 > div:nth-of-type(7)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 670.58,
+          "top": 444.8,
+          "right": 739.42,
+          "bottom": 491.6,
+          "width": 68.84,
+          "height": 46.8
+        },
+        "containerSelector": "#cap3b > span:nth-of-type(1)",
+        "text": "$",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply. Decoration nobody needs to read can take data-layout-ignore.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 670.58,
+          "y": 444.8,
+          "width": 68.84,
+          "height": 46.8
+        },
+        "firstSeen": 16.76,
+        "lastSeen": 17.162,
+        "occurrences": 2,
+        "heldMs": 401.9999999999975,
+        "times": [
+          16.76,
+          17.162
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 17.333,
+        "selector": "#big500",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -29.32,
+          "top": 871.45,
+          "right": 1109.32,
+          "bottom": 1203.55,
+          "width": 1138.64,
+          "height": 332.1
+        },
+        "containerSelector": "#s3",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 29.32,
+          "right": 29.32
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -29.32,
+          "y": 871.45,
+          "width": 1138.64,
+          "height": 332.1
+        },
+        "firstSeen": 17.333,
+        "lastSeen": 17.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          17.333
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 17.43,
+        "selector": "#s3 > div:nth-of-type(9)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 218.02,
+          "top": 944.01,
+          "right": 261.98,
+          "bottom": 1006.02,
+          "width": 43.96,
+          "height": 62.01
+        },
+        "containerSelector": "#big500",
+        "text": "$",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply. Decoration nobody needs to read can take data-layout-ignore.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 218.02,
+          "y": 944.01,
+          "width": 43.96,
+          "height": 62.01
+        },
+        "firstSeen": 17.43,
+        "lastSeen": 17.43,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          17.43
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 17.564,
+        "selector": "#s3 > div:nth-of-type(10)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 578.78,
+          "top": 934.04,
+          "right": 621.22,
+          "bottom": 995.56,
+          "width": 42.44,
+          "height": 61.52
+        },
+        "containerSelector": "#big500",
+        "text": "$",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply. Decoration nobody needs to read can take data-layout-ignore.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 578.78,
+          "y": 934.04,
+          "width": 42.44,
+          "height": 61.52
+        },
+        "firstSeen": 17.564,
+        "lastSeen": 17.564,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          17.564
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 20,
+        "selector": "#s4 > div:nth-of-type(11)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 927.55,
+          "top": -34.28,
+          "right": 958.45,
+          "bottom": 8.72,
+          "width": 30.9,
+          "height": 43
+        },
+        "containerSelector": "#s4",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 34.28
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 927.55,
+          "y": -34.28,
+          "width": 30.9,
+          "height": 43
+        },
+        "firstSeen": 20,
+        "lastSeen": 22.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          20,
+          22.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 20,
+        "selector": "#s4 > div:nth-of-type(12)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 149.53,
+          "top": -55.3,
+          "right": 176.47,
+          "bottom": -14.7,
+          "width": 26.94,
+          "height": 40.6
+        },
+        "containerSelector": "#s4",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 55.3
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 149.53,
+          "y": -55.3,
+          "width": 26.94,
+          "height": 40.6
+        },
+        "firstSeen": 20,
+        "lastSeen": 22.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          20,
+          22.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 20,
+        "selector": "#s4 > div:nth-of-type(13)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 750,
+          "top": -60,
+          "right": 776,
+          "bottom": -20,
+          "width": 26,
+          "height": 40
+        },
+        "containerSelector": "#s4",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 60
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 750,
+          "y": -60,
+          "width": 26,
+          "height": 40
+        },
+        "firstSeen": 20,
+        "lastSeen": 22.667,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          20,
+          22.667
+        ]
+      },
+      {
+        "code": "panel_out_of_canvas",
+        "severity": "info",
+        "time": 20,
+        "selector": "#s4 > div:nth-of-type(11)",
+        "message": "Painted panel extends outside the composition canvas.",
+        "rect": {
+          "left": 927.55,
+          "top": -34.28,
+          "right": 958.45,
+          "bottom": 8.72,
+          "width": 30.9,
+          "height": 43
+        },
+        "containerSelector": "#root",
+        "text": "",
+        "fixHint": "Move the panel inward, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "top": 34.28
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 927.55,
+          "y": -34.28,
+          "width": 30.9,
+          "height": 43
+        },
+        "firstSeen": 20,
+        "lastSeen": 20,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          20
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 22.667,
+        "selector": "#s4 > div:nth-of-type(4)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 90,
+          "top": 1940,
+          "right": 116,
+          "bottom": 1980,
+          "width": 26,
+          "height": 40
+        },
+        "containerSelector": "#s4",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "bottom": 60
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 90,
+          "y": 1940,
+          "width": 26,
+          "height": 40
+        },
+        "firstSeen": 22.667,
+        "lastSeen": 22.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          22.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 22.667,
+        "selector": "#s4 > div:nth-of-type(5)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 210,
+          "top": 1940,
+          "right": 236,
+          "bottom": 1980,
+          "width": 26,
+          "height": 40
+        },
+        "containerSelector": "#s4",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "bottom": 60
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 210,
+          "y": 1940,
+          "width": 26,
+          "height": 40
+        },
+        "firstSeen": 22.667,
+        "lastSeen": 22.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          22.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 22.667,
+        "selector": "#s4 > div:nth-of-type(6)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 330,
+          "top": 1940,
+          "right": 356,
+          "bottom": 1980,
+          "width": 26,
+          "height": 40
+        },
+        "containerSelector": "#s4",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "bottom": 60
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 330,
+          "y": 1940,
+          "width": 26,
+          "height": 40
+        },
+        "firstSeen": 22.667,
+        "lastSeen": 22.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          22.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 22.667,
+        "selector": "#s4 > div:nth-of-type(7)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 450,
+          "top": 1940,
+          "right": 476,
+          "bottom": 1980,
+          "width": 26,
+          "height": 40
+        },
+        "containerSelector": "#s4",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "bottom": 60
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 450,
+          "y": 1940,
+          "width": 26,
+          "height": 40
+        },
+        "firstSeen": 22.667,
+        "lastSeen": 22.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          22.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 22.667,
+        "selector": "#s4 > div:nth-of-type(8)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 570,
+          "top": 1940,
+          "right": 596,
+          "bottom": 1980,
+          "width": 26,
+          "height": 40
+        },
+        "containerSelector": "#s4",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "bottom": 60
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 570,
+          "y": 1940,
+          "width": 26,
+          "height": 40
+        },
+        "firstSeen": 22.667,
+        "lastSeen": 22.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          22.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 22.667,
+        "selector": "#s4 > div:nth-of-type(9)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 690,
+          "top": 1940,
+          "right": 716,
+          "bottom": 1980,
+          "width": 26,
+          "height": 40
+        },
+        "containerSelector": "#s4",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "bottom": 60
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 690,
+          "y": 1940,
+          "width": 26,
+          "height": 40
+        },
+        "firstSeen": 22.667,
+        "lastSeen": 22.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          22.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 22.667,
+        "selector": "#s4 > div:nth-of-type(10)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 810,
+          "top": 1940,
+          "right": 836,
+          "bottom": 1980,
+          "width": 26,
+          "height": 40
+        },
+        "containerSelector": "#s4",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "bottom": 60
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 810,
+          "y": 1940,
+          "width": 26,
+          "height": 40
+        },
+        "firstSeen": 22.667,
+        "lastSeen": 22.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          22.667
+        ]
+      }
+    ],
+    "duration": 24,
+    "samples": [
+      1.333,
+      4,
+      6.667,
+      9.333,
+      12,
+      14.667,
+      17.333,
+      20,
+      22.667
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 55,
+    "truncated": false,
+    "faceCheck": {
+      "ran": true,
+      "candidates": 0,
+      "faces": 0
+    }
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      1.333,
+      6.667,
+      12,
+      17.333,
+      22.667
+    ],
+    "checked": 25,
+    "passed": 25
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "film_silent",
+        "severity": "warning",
+        "message": "This 24 s film has no sound source (no <audio>, no <video> with sound): add a music bed and sounds on the visible actions unless the person asked for silence; see references/sound.md.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0
+      }
+    ],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 192
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 1,
+    "findings": [
+      {
+        "code": "audio_none",
+        "severity": "info",
+        "message": "The film has no sound: no clip in it plays audio.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0
+      }
+    ]
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

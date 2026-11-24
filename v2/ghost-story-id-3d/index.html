@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="assets/gsap.min.js"></script>
+<style>
+  @font-face { font-family: "Inter"; src: url("assets/Inter-Bold.otf") format("opentype"); font-weight: 700; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #191419; }
+  #root { width: 1080px; height: 1920px; position: relative; overflow: hidden; background: #191419; font-family: "Inter", sans-serif; }
+  .scene { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
+  .clip { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+  .cap { position: absolute; left: 40px; right: 40px; top: 470px; text-align: center; color: #fff; font-size: 66px; font-weight: 700; line-height: 1.15; text-shadow: 0 4px 0 rgba(0,0,0,.35); }
+  .cap .hl { color: #ff5db1; }
+  .sub { position: absolute; left: 40px; right: 40px; bottom: 120px; text-align: center; color: #fff; font-size: 58px; font-weight: 700; line-height: 1.2; text-shadow: 0 4px 0 rgba(0,0,0,.35); }
+  .sub .hl { color: #ff5db1; }
+  #badge { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 50; pointer-events: none; }
+  .ghost { position: absolute; will-change: transform, opacity; }
+  .ghost img { width: 100%; height: 100%; display: block; }
+  .robot { position: absolute; will-change: transform, opacity; }
+  .robot img { width: 100%; height: 100%; display: block; }
+  .coin { position: absolute; border-radius: 50%; background: #f5c542; border: 6px solid #c98f1b; color: #7a5200; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .confetti { position: absolute; border-radius: 4px; z-index: 1; }
+  #s7 .ghost, #s7 .robot { z-index: 5; }
+  #s7 .cap, #s7 .sub, #big500 { z-index: 2; }
+  .z { position: absolute; color: #fff; font-weight: 700; text-shadow: 0 3px 0 rgba(0,0,0,.4); }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="24" data-width="1080" data-height="1920">
+
+  <!-- Brand badge: on screen from the first frame (press-pack, used as-is) -->
+  <img id="badge" src="assets/badge.png" alt="" />
+
+  <!-- ============ SCENE 1 (0-5.4s): voxel robot asleep on the couch ============ -->
+  <div id="s1" class="scene clip" data-start="0" data-duration="5.4" data-track-index="0">
+    <div style="position:absolute;inset:0;background:linear-gradient(#141428 0%, #191419 70%);"></div>
+    <!-- window -->
+    <div style="position:absolute;left:90px;top:760px;width:230px;height:300px;background:#23234d;border:10px solid #3a3a6e;border-radius:18px;">
+      <div style="position:absolute;left:105px;top:0;width:10px;height:100%;background:#3a3a6e;"></div>
+      <div style="position:absolute;top:140px;left:0;width:100%;height:10px;background:#3a3a6e;"></div>
+      <div class="star" style="position:absolute;left:40px;top:50px;width:14px;height:14px;border-radius:50%;background:#fff;"></div>
+      <div class="star" style="position:absolute;left:150px;top:90px;width:10px;height:10px;border-radius:50%;background:#ffe9a8;"></div>
+      <div class="star" style="position:absolute;left:70px;top:200px;width:10px;height:10px;border-radius:50%;background:#fff;"></div>
+      <div style="position:absolute;right:22px;top:34px;width:64px;height:64px;border-radius:50%;background:#f5eeda;box-shadow:0 0 40px rgba(245,238,218,.5);"></div>
+    </div>
+    <!-- couch -->
+    <div style="position:absolute;left:90px;top:1180px;width:900px;height:330px;background:#a83a3a;border-radius:46px;"></div>
+    <div style="position:absolute;left:90px;top:1120px;width:900px;height:130px;background:#c04545;border-radius:46px;"></div>
+    <div style="position:absolute;left:120px;top:1510px;width:840px;height:60px;background:#8c2f2f;border-radius:30px;"></div>
+    <!-- voxel robot ("gw") lying asleep on the couch, head to the left -->
+    <div id="robot1" class="robot" style="left:200px;top:1080px;width:480px;height:480px;"><img src="assets/robot.png" alt="" /></div>
+    <!-- Z's rising from the robot's head -->
+    <div id="z1" class="z" style="left:330px;top:1030px;font-size:64px;">Z</div>
+    <div id="z2" class="z" style="left:390px;top:970px;font-size:84px;">Z</div>
+    <div id="z3" class="z" style="left:450px;top:910px;font-size:104px;">Z</div>
+    <!-- ghost (the AI agent) floating by the couch -->
+    <div id="ghost1" class="ghost" style="left:760px;top:1240px;width:200px;height:200px;"><img src="assets/ghost.png" alt="" /></div>
+    <div id="cap1" class="cap">gw: biarin AI agent gw<br/>kerjain <span class="hl">satu tugas kecil</span></div>
+    <div id="sub1" class="sub">apa yang bisa salah</div>
+  </div>
+
+  <!-- ============ SCENE 2 (5.0-9.4s): ghost at 3 AM ============ -->
+  <div id="s2" class="scene clip" data-start="5.0" data-duration="4.4" data-track-index="1">
+    <div style="position:absolute;inset:0;background:linear-gradient(#101024 0%, #191419 75%);"></div>
+    <!-- clock (3:00) -->
+    <div style="position:absolute;left:880px;top:280px;width:150px;height:150px;border-radius:50%;background:#f5f0e6;border:8px solid #2c2c44;">
+      <div id="handH" style="position:absolute;left:66px;top:22px;width:9px;height:53px;background:#191419;border-radius:5px;transform-origin:50% 100%;"></div>
+      <div id="handM" style="position:absolute;left:69px;top:8px;width:6px;height:67px;background:#c41c83;border-radius:3px;transform-origin:50% 100%;"></div>
+      <div style="position:absolute;left:66px;top:66px;width:14px;height:14px;border-radius:50%;background:#191419;"></div>
+    </div>
+    <!-- monitors -->
+    <div style="position:absolute;left:80px;top:780px;width:420px;height:280px;background:#0d2b26;border:12px solid #2c2c44;border-radius:16px;">
+      <div class="code" style="position:absolute;left:24px;top:26px;width:280px;height:16px;background:#2dd4a8;border-radius:8px;"></div>
+      <div class="code" style="position:absolute;left:24px;top:62px;width:340px;height:16px;background:#2dd4a8;border-radius:8px;"></div>
+      <div class="code" style="position:absolute;left:24px;top:98px;width:220px;height:16px;background:#7ee8c8;border-radius:8px;"></div>
+      <div class="code" style="position:absolute;left:24px;top:134px;width:300px;height:16px;background:#2dd4a8;border-radius:8px;"></div>
+      <div class="code" style="position:absolute;left:24px;top:170px;width:180px;height:16px;background:#ffb020;border-radius:8px;"></div>
+      <div class="code" style="position:absolute;left:24px;top:206px;width:260px;height:16px;background:#2dd4a8;border-radius:8px;"></div>
+    </div>
+    <div style="position:absolute;left:540px;top:780px;width:420px;height:280px;background:#241a2e;border:12px solid #2c2c44;border-radius:16px;">
+      <div class="code" style="position:absolute;left:24px;top:26px;width:300px;height:16px;background:#ffb020;border-radius:8px;"></div>
+      <div class="code" style="position:absolute;left:24px;top:62px;width:200px;height:16px;background:#ffb020;border-radius:8px;"></div>
+      <div class="code" style="position:absolute;left:24px;top:98px;width:330px;height:16px;background:#ff5db1;border-radius:8px;"></div>
+      <div class="code" style="position:absolute;left:24px;top:134px;width:240px;height:16px;background:#ffb020;border-radius:8px;"></div>
+      <div class="code" style="position:absolute;left:24px;top:170px;width:290px;height:16px;background:#ff5db1;border-radius:8px;"></div>
+      <div class="code" style="position:absolute;left:24px;top:206px;width:160px;height:16px;background:#ffb020;border-radius:8px;"></div>
+    </div>
+    <!-- desk -->
+    <div style="position:absolute;left:60px;top:1420px;width:960px;height:60px;background:#6b4a2f;border-radius:14px;"></div>
+    <div style="position:absolute;left:120px;top:1480px;width:40px;height:280px;background:#54371f;"></div>
+    <div style="position:absolute;left:920px;top:1480px;width:40px;height:280px;background:#54371f;"></div>
+    <!-- coffee cups -->
+    <div style="position:absolute;left:120px;top:1330px;width:90px;height:90px;background:#fff;border-radius:12px;border:8px solid #2c2c44;"></div>
+    <div class="steam" style="position:absolute;left:150px;top:1280px;width:8px;height:44px;background:rgba(255,255,255,.7);border-radius:4px;"></div>
+    <div style="position:absolute;left:880px;top:1330px;width:90px;height:90px;background:#fff;border-radius:12px;border:8px solid #2c2c44;"></div>
+    <div class="steam" style="position:absolute;left:910px;top:1280px;width:8px;height:44px;background:rgba(255,255,255,.7);border-radius:4px;"></div>
+    <!-- ghost typing at the desk -->
+    <div id="ghost2" class="ghost" style="left:365px;top:1010px;width:350px;height:350px;"><img src="assets/ghost.png" alt="" /></div>
+    <!-- keyboard -->
+    <div style="position:absolute;left:390px;top:1390px;width:300px;height:44px;background:#2c2c44;border-radius:10px;"></div>
+    <div id="cap2" class="cap">AI agent gw<br/><span class="hl">jam 3 pagi:</span></div>
+  </div>
+
+  <!-- ============ SCENE 3 (9.0-12.4s): SHOWCASE 1 — bikin game ============ -->
+  <div id="s3" class="scene clip" data-start="9.0" data-duration="3.4" data-track-index="2">
+    <div style="position:absolute;inset:0;background:linear-gradient(#0d1f1a 0%, #191419 75%);"></div>
+    <!-- pixel game screen -->
+    <div style="position:absolute;left:140px;top:760px;width:800px;height:540px;background:#0d2b26;border:12px solid #2c2c44;border-radius:16px;">
+      <div style="position:absolute;left:24px;top:20px;font-size:34px;font-weight:700;color:#2dd4a8;">SCORE 1250</div>
+      <div style="position:absolute;right:24px;top:20px;font-size:34px;font-weight:700;color:#ffb020;">HI 9999</div>
+      <!-- pixel aliens, 3 rows x 4 -->
+      <div class="alien" style="position:absolute;left:240px;top:100px;width:44px;height:44px;background:#ff5db1;border-radius:6px;"></div>
+      <div class="alien" style="position:absolute;left:324px;top:100px;width:44px;height:44px;background:#2dd4a8;border-radius:6px;"></div>
+      <div class="alien" style="position:absolute;left:408px;top:100px;width:44px;height:44px;background:#ff5db1;border-radius:6px;"></div>
+      <div class="alien" style="position:absolute;left:492px;top:100px;width:44px;height:44px;background:#2dd4a8;border-radius:6px;"></div>
+      <div class="alien" style="position:absolute;left:240px;top:180px;width:44px;height:44px;background:#2dd4a8;border-radius:6px;"></div>
+      <div class="alien" style="position:absolute;left:324px;top:180px;width:44px;height:44px;background:#ff5db1;border-radius:6px;"></div>
+      <div class="alien" style="position:absolute;left:408px;top:180px;width:44px;height:44px;background:#2dd4a8;border-radius:6px;"></div>
+      <div class="alien" style="position:absolute;left:492px;top:180px;width:44px;height:44px;background:#ff5db1;border-radius:6px;"></div>
+      <div class="alien" style="position:absolute;left:240px;top:260px;width:44px;height:44px;background:#ff5db1;border-radius:6px;"></div>
+      <div class="alien" style="position:absolute;left:324px;top:260px;width:44px;height:44px;background:#2dd4a8;border-radius:6px;"></div>
+      <div class="alien" style="position:absolute;left:408px;top:260px;width:44px;height:44px;background:#ff5db1;border-radius:6px;"></div>
+      <div class="alien" style="position:absolute;left:492px;top:260px;width:44px;height:44px;background:#2dd4a8;border-radius:6px;"></div>
+      <!-- bullet + ship -->
+      <div id="bullet" style="position:absolute;left:383px;top:380px;width:10px;height:28px;background:#fff;border-radius:5px;"></div>
+      <div id="ship" style="position:absolute;left:353px;top:420px;width:0;height:0;border-left:35px solid transparent;border-right:35px solid transparent;border-bottom:50px solid #f5c542;"></div>
+    </div>
+    <!-- ghost playing -->
+    <div id="ghost3" class="ghost" style="left:390px;top:1420px;width:300px;height:300px;"><img src="assets/ghost.png" alt="" /></div>
+    <div id="cap3" class="cap">bikin <span class="hl">game</span></div>
+  </div>
+
+  <!-- ============ SCENE 4 (12.0-15.4s): SHOWCASE 2 — lomba gambar ============ -->
+  <div id="s4" class="scene clip" data-start="12.0" data-duration="3.4" data-track-index="3">
+    <div style="position:absolute;inset:0;background:linear-gradient(#1c1a2e 0%, #191419 75%);"></div>
+    <!-- canvas with a painting taking shape -->
+    <div style="position:absolute;left:190px;top:780px;width:700px;height:500px;background:#fff;border-radius:24px;box-shadow:0 24px 60px rgba(0,0,0,.5);">
+      <div class="paint" style="position:absolute;left:60px;top:50px;width:110px;height:110px;border-radius:50%;background:#ffb020;"></div>
+      <div class="paint" style="position:absolute;left:80px;bottom:0;width:0;height:0;border-left:130px solid transparent;border-right:130px solid transparent;border-bottom:180px solid #2c2c44;"></div>
+      <div class="paint" style="position:absolute;left:300px;bottom:0;width:0;height:0;border-left:110px solid transparent;border-right:110px solid transparent;border-bottom:130px solid #5a5a6e;"></div>
+      <div class="paint" style="position:absolute;left:520px;bottom:60px;width:8px;height:90px;background:#22c55e;"></div>
+      <div class="paint" style="position:absolute;left:500px;bottom:140px;width:50px;height:50px;border-radius:50%;background:#ff5db1;"></div>
+    </div>
+    <!-- paintbrush leaning on the canvas -->
+    <div id="brush" style="position:absolute;left:830px;top:760px;width:36px;height:220px;background:#8b5a2b;border-radius:18px;">
+      <div style="position:absolute;left:0;top:-34px;width:36px;height:44px;background:#2c2c44;border-radius:10px;"></div>
+    </div>
+    <!-- ghost painting -->
+    <div id="ghost4" class="ghost" style="left:390px;top:1420px;width:300px;height:300px;"><img src="assets/ghost.png" alt="" /></div>
+    <div id="cap4" class="cap">lomba <span class="hl">gambar</span></div>
+  </div>
+
+  <!-- ============ SCENE 5 (15.0-18.4s): SHOWCASE 3 — bikin meme ============ -->
+  <div id="s5" class="scene clip" data-start="15.0" data-duration="3.4" data-track-index="4">
+    <div style="position:absolute;inset:0;background:linear-gradient(#2a0f22 0%, #191419 75%);"></div>
+    <!-- meme card: robot asleep on top, "AI GUA KERJA" below -->
+    <div id="memecard" style="position:absolute;left:190px;top:760px;width:700px;height:560px;background:#fff;border-radius:24px;box-shadow:0 24px 60px rgba(0,0,0,.5);">
+      <div style="position:absolute;left:0;right:0;top:36px;text-align:center;font-size:54px;font-weight:700;color:#191419;">GUA TIDUR</div>
+      <div id="memerobot" class="robot" style="left:245px;top:150px;width:210px;height:210px;"><img src="assets/robot.png" alt="" /></div>
+      <div style="position:absolute;left:0;right:0;bottom:36px;text-align:center;font-size:54px;font-weight:700;color:#c41c83;">AI GUA KERJA</div>
+    </div>
+    <!-- ghost making the meme -->
+    <div id="ghost5" class="ghost" style="left:390px;top:1420px;width:300px;height:300px;"><img src="assets/ghost.png" alt="" /></div>
+    <div id="cap5" class="cap">bikin <span class="hl">meme</span></div>
+  </div>
+
+  <!-- ============ SCENE 6 (18.0-21.4s): SHOWCASE 4 — bikin dashboard ============ -->
+  <div id="s6" class="scene clip" data-start="18.0" data-duration="3.4" data-track-index="5">
+    <div style="position:absolute;inset:0;background:linear-gradient(#0f1a2e 0%, #191419 75%);"></div>
+    <!-- token radar dashboard -->
+    <div style="position:absolute;left:140px;top:760px;width:800px;height:560px;background:#101024;border:12px solid #2c2c44;border-radius:24px;box-shadow:0 24px 60px rgba(0,0,0,.5);">
+      <div style="position:absolute;left:40px;top:28px;font-size:46px;font-weight:700;color:#fff;">TOKEN RADAR</div>
+      <div style="position:absolute;right:40px;top:36px;font-size:36px;font-weight:700;color:#2dd4a8;">#1 $326M</div>
+      <svg style="position:absolute;left:40px;top:110px;" width="720" height="180" viewBox="0 0 720 180">
+        <polyline id="trendline" points="0,150 120,120 240,130 360,80 480,90 600,40 720,20" fill="none" stroke="#2dd4a8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <div style="position:absolute;left:40px;top:320px;width:720px;height:180px;display:flex;align-items:flex-end;gap:24px;">
+        <div class="bar" style="width:124px;height:90px;background:#2dd4a8;border-radius:10px 10px 0 0;"></div>
+        <div class="bar" style="width:124px;height:140px;background:#ff5db1;border-radius:10px 10px 0 0;"></div>
+        <div class="bar" style="width:124px;height:110px;background:#ffb020;border-radius:10px 10px 0 0;"></div>
+        <div class="bar" style="width:124px;height:170px;background:#2dd4a8;border-radius:10px 10px 0 0;"></div>
+        <div class="bar" style="width:124px;height:130px;background:#ff5db1;border-radius:10px 10px 0 0;"></div>
+      </div>
+    </div>
+    <!-- ghost building the dashboard -->
+    <div id="ghost6" class="ghost" style="left:390px;top:1420px;width:300px;height:300px;"><img src="assets/ghost.png" alt="" /></div>
+    <div id="cap6" class="cap">bikin <span class="hl">dashboard</span></div>
+  </div>
+
+  <!-- ============ SCENE 7 (21.0-24s): payoff — won $500, woke up richer ============ -->
+  <div id="s7" class="scene clip" data-start="21.0" data-duration="3.0" data-track-index="6">
+    <div style="position:absolute;inset:0;background:linear-gradient(#3a1c2e 0%, #191419 75%);"></div>
+    <!-- sun / morning glow -->
+    <div style="position:absolute;left:390px;top:560px;width:300px;height:300px;border-radius:50%;background:#ffb020;box-shadow:0 0 120px rgba(255,176,32,.65);"></div>
+    <!-- big $500 -->
+    <div id="big500" style="position:absolute;left:0;right:0;top:880px;text-align:center;color:#f5c542;font-size:260px;font-weight:700;text-shadow:0 10px 0 rgba(0,0,0,.35);">$500</div>
+    <!-- falling $ coins -->
+    <div class="coin" style="left:120px;top:-140px;width:110px;height:110px;font-size:64px;">$</div>
+    <div class="coin" style="left:300px;top:-140px;width:90px;height:90px;font-size:52px;">$</div>
+    <div class="coin" style="left:480px;top:-140px;width:120px;height:120px;font-size:70px;">$</div>
+    <div class="coin" style="left:660px;top:-140px;width:90px;height:90px;font-size:52px;">$</div>
+    <div class="coin" style="left:830px;top:-140px;width:110px;height:110px;font-size:64px;">$</div>
+    <div class="coin" style="left:200px;top:-140px;width:80px;height:80px;font-size:46px;">$</div>
+    <div class="coin" style="left:560px;top:-140px;width:80px;height:80px;font-size:46px;">$</div>
+    <div class="coin" style="left:920px;top:-140px;width:80px;height:80px;font-size:46px;">$</div>
+    <!-- voxel robot ("gw") standing, celebrating -->
+    <div id="robot4" class="robot" style="left:150px;top:1150px;width:380px;height:380px;"><img src="assets/robot.png" alt="" /></div>
+    <!-- ghost celebrating beside him -->
+    <div id="ghost7" class="ghost" style="left:600px;top:1150px;width:340px;height:340px;"><img src="assets/ghost.png" alt="" /></div>
+    <!-- confetti -->
+    <div class="confetti" style="left:90px;top:-60px;width:26px;height:40px;background:#ff5db1;"></div>
+    <div class="confetti" style="left:210px;top:-60px;width:26px;height:40px;background:#f5c542;"></div>
+    <div class="confetti" style="left:330px;top:-60px;width:26px;height:40px;background:#2dd4a8;"></div>
+    <div class="confetti" style="left:450px;top:-60px;width:26px;height:40px;background:#ff5db1;"></div>
+    <div class="confetti" style="left:570px;top:-60px;width:26px;height:40px;background:#ffb020;"></div>
+    <div class="confetti" style="left:690px;top:-60px;width:26px;height:40px;background:#2dd4a8;"></div>
+    <div class="confetti" style="left:810px;top:-60px;width:26px;height:40px;background:#f5c542;"></div>
+    <div class="confetti" style="left:930px;top:-60px;width:26px;height:40px;background:#ff5db1;"></div>
+    <div class="confetti" style="left:150px;top:-60px;width:26px;height:40px;background:#ffb020;"></div>
+    <div class="confetti" style="left:750px;top:-60px;width:26px;height:40px;background:#2dd4a8;"></div>
+    <div id="cap7a" class="cap">dia menang <span class="hl">$500.</span></div>
+    <div id="sub7" class="sub">gw bangun tidur<br/>jadi <span class="hl">lebih kaya.</span></div>
+  </div>
+
+</div>
+<script>
+  const tl = gsap.timeline({ paused: true });
+  // ---------- initial states ----------
+  tl.set("#s1", { opacity: 1 }, 0);
+  tl.set(["#s2", "#s3", "#s4", "#s5", "#s6", "#s7"], { opacity: 0 }, 0);
+  tl.set(["#cap1", "#sub1"], { opacity: 0, y: 24 }, 0);
+  tl.set("#cap2", { opacity: 0, y: 24 }, 0);
+  tl.set(["#cap3", "#cap4", "#cap5", "#cap6"], { opacity: 0, y: 24 }, 0);
+  tl.set(["#cap7a", "#sub7"], { opacity: 0, y: 24 }, 0);
+  tl.set("#robot1", { rotation: -84, transformOrigin: "50% 50%" }, 0);
+  tl.set("#big500", { scale: 0, opacity: 0 }, 0);
+  tl.set(".code", { opacity: 0 }, 0);
+  tl.set(["#handH"], { rotation: 90 }, 0);
+  tl.set(["#handM"], { rotation: 0 }, 0);
+  tl.set("#memerobot", { rotation: -15, transformOrigin: "50% 50%" }, 0);
+  tl.set("#brush", { rotation: 25, transformOrigin: "50% 100%" }, 0);
+  tl.set(".bar", { scaleY: 0, transformOrigin: "50% 100%" }, 0);
+  tl.set("#trendline", { opacity: 0, x: -20 }, 0);
+  tl.set(".paint", { scale: 0, transformOrigin: "50% 100%" }, 0);
+  tl.set("#memecard", { scale: 0.92, opacity: 0 }, 0);
+  tl.set("#robot4", { scale: 0.8, opacity: 0 }, 0);
+
+  // ---------- SCENE 1 (0-5.4): hook ----------
+  tl.to("#cap1", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.3);
+  tl.to("#sub1", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 1.2);
+  // robot breathing (lying down)
+  tl.to("#robot1", { scale: 1.02, duration: 0.9, ease: "sine.inOut", yoyo: true, repeat: 5, transformOrigin: "50% 50%" }, 0.2);
+  // Z's rising + fading, looping
+  tl.fromTo("#z1", { y: 0, opacity: 1 }, { y: -70, opacity: 0, duration: 1.8, repeat: 2, ease: "sine.in" }, 0.5);
+  tl.fromTo("#z2", { y: 0, opacity: 1 }, { y: -70, opacity: 0, duration: 1.8, repeat: 2, ease: "sine.in" }, 1.1);
+  tl.fromTo("#z3", { y: 0, opacity: 1 }, { y: -70, opacity: 0, duration: 1.8, repeat: 2, ease: "sine.in" }, 1.7);
+  // ghost bobbing
+  tl.to("#ghost1", { y: -18, duration: 0.8, ease: "sine.inOut", yoyo: true, repeat: 5 }, 0.2);
+  tl.to("#ghost1", { rotation: 4, duration: 1.2, ease: "sine.inOut", yoyo: true, repeat: 3 }, 0.2);
+  // stars twinkle
+  tl.to(".star", { opacity: 0.25, duration: 0.9, ease: "sine.inOut", yoyo: true, repeat: 4, stagger: 0.3 }, 0.3);
+  // scene 1 crossfade out
+  tl.to("#s1", { opacity: 0, duration: 0.4, ease: "power1.inOut" }, 5.0);
+
+  // ---------- SCENE 2 (5.0-9.4): ghost at 3 AM ----------
+  tl.to("#s2", { opacity: 1, duration: 0.4, ease: "power1.inOut" }, 5.0);
+  tl.to("#cap2", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 5.4);
+  // ghost typing: rapid small bob
+  tl.to("#ghost2", { y: -12, duration: 0.16, ease: "sine.inOut", yoyo: true, repeat: 22 }, 5.3);
+  tl.to("#ghost2", { rotation: 2, duration: 0.5, ease: "sine.inOut", yoyo: true, repeat: 7 }, 5.3);
+  // code lines appear staggered
+  tl.to(".code", { opacity: 1, duration: 0.3, stagger: 0.22 }, 5.6);
+  // clock hands move (3 AM, time passing)
+  tl.to("#handM", { rotation: 25, duration: 3.6, ease: "none" }, 5.4);
+  tl.to("#handH", { rotation: 98, duration: 3.6, ease: "none" }, 5.4);
+  // coffee steam rising
+  tl.fromTo(".steam", { y: 10, opacity: 0.2 }, { y: -26, opacity: 0.85, duration: 1.4, yoyo: true, repeat: 2, ease: "sine.inOut" }, 5.5);
+  // scene 2 crossfade out (fast cut into the showcase)
+  tl.to("#s2", { opacity: 0, duration: 0.2, ease: "power1.inOut" }, 9.0);
+
+  // ---------- SCENE 3 (9.0-12.4): showcase 1 — bikin game ----------
+  tl.to("#s3", { opacity: 1, duration: 0.2, ease: "power1.inOut" }, 9.0);
+  tl.to("#cap3", { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 9.2);
+  // aliens bob + ship slides + bullet rises
+  tl.to(".alien", { y: -8, duration: 0.5, ease: "sine.inOut", yoyo: true, repeat: 5, stagger: 0.06 }, 9.3);
+  tl.to("#ship", { x: -40, duration: 0.7, ease: "sine.inOut", yoyo: true, repeat: 3 }, 9.3);
+  tl.fromTo("#bullet", { y: 0, opacity: 1 }, { y: -120, opacity: 0.2, duration: 0.7, repeat: 3, ease: "power1.in" }, 9.4);
+  tl.to("#ghost3", { y: -16, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 4 }, 9.3);
+  // fast cut out
+  tl.to("#s3", { opacity: 0, duration: 0.15, ease: "power1.inOut" }, 12.0);
+
+  // ---------- SCENE 4 (12.0-15.4): showcase 2 — lomba gambar ----------
+  tl.to("#s4", { opacity: 1, duration: 0.15, ease: "power1.inOut" }, 12.0);
+  tl.to("#cap4", { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 12.2);
+  // painting pops in piece by piece
+  tl.to(".paint", { scale: 1, duration: 0.45, ease: "back.out(1.8)", stagger: 0.16 }, 12.3);
+  // brush wiggle
+  tl.to("#brush", { rotation: 33, duration: 0.4, ease: "sine.inOut", yoyo: true, repeat: 6 }, 12.4);
+  tl.to("#ghost4", { y: -16, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 4 }, 12.3);
+  // fast cut out
+  tl.to("#s4", { opacity: 0, duration: 0.15, ease: "power1.inOut" }, 15.0);
+
+  // ---------- SCENE 5 (15.0-18.4): showcase 3 — bikin meme ----------
+  tl.to("#s5", { opacity: 1, duration: 0.15, ease: "power1.inOut" }, 15.0);
+  tl.to("#cap5", { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 15.2);
+  tl.to("#memecard", { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }, 15.2);
+  // meme robot wiggles (asleep)
+  tl.to("#memerobot", { rotation: -9, duration: 0.5, ease: "sine.inOut", yoyo: true, repeat: 5 }, 15.4);
+  tl.to("#ghost5", { y: -16, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 4 }, 15.3);
+  // fast cut out
+  tl.to("#s5", { opacity: 0, duration: 0.15, ease: "power1.inOut" }, 18.0);
+
+  // ---------- SCENE 6 (18.0-21.4): showcase 4 — bikin dashboard ----------
+  tl.to("#s6", { opacity: 1, duration: 0.15, ease: "power1.inOut" }, 18.0);
+  tl.to("#cap6", { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 18.2);
+  // trend line slides in, bars grow
+  tl.to("#trendline", { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 18.3);
+  tl.to(".bar", { scaleY: 1, duration: 0.45, ease: "back.out(1.6)", stagger: 0.1 }, 18.3);
+  tl.to("#ghost6", { y: -16, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 4 }, 18.3);
+  // crossfade out into the payoff
+  tl.to("#s6", { opacity: 0, duration: 0.3, ease: "power1.inOut" }, 21.0);
+
+  // ---------- SCENE 7 (21.0-24): payoff ----------
+  tl.to("#s7", { opacity: 1, duration: 0.3, ease: "power1.inOut" }, 21.0);
+  tl.to("#cap7a", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 21.2);
+  // robot wakes up (scale in) then celebrates
+  tl.to("#robot4", { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.6)" }, 21.2);
+  tl.to("#robot4", { y: -14, duration: 0.55, ease: "sine.inOut", yoyo: true, repeat: 4 }, 21.4);
+  tl.to("#robot4", { rotation: 4, duration: 0.5, ease: "sine.inOut", yoyo: true, repeat: 4 }, 21.4);
+  // $500 win
+  tl.to("#big500", { scale: 1, opacity: 1, duration: 0.55, ease: "back.out(1.8)" }, 21.3);
+  tl.to("#big500", { scale: 1.06, duration: 0.5, ease: "sine.inOut", yoyo: true, repeat: 2 }, 21.9);
+  // $ coins rain down
+  tl.to("#s7 .coin", { y: 1980, rotation: 360, duration: 1.9, ease: "power1.in", stagger: 0.14 }, 21.3);
+  // ghost celebrating
+  tl.to("#ghost7", { y: -26, duration: 0.55, ease: "sine.inOut", yoyo: true, repeat: 4 }, 21.3);
+  tl.to("#ghost7", { rotation: 6, duration: 0.9, ease: "sine.inOut", yoyo: true, repeat: 2 }, 21.3);
+  // payoff sub line (earlier so it reads a full 2s before the film ends)
+  tl.to("#sub7", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 22.0);
+  // confetti rain
+  tl.to("#s7 .confetti", { y: 2000, rotation: 540, duration: 2.4, ease: "power1.in", stagger: 0.16 }, 21.4);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["main"] = tl;
+  tl.seek(0);
+</script>
+</body>
+</html>

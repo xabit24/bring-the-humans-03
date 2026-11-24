@@ -1,0 +1,648 @@
+{
+  "version": 1,
+  "historyId": "187d1e42-e4dd-4b84-a8fb-b9875e1e332a",
+  "currentRevision": "44bc9dfb-f784-457e-be43-513a2f6709f0",
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "729e31835a21c7b42ee006e2aacc63016abc05d26883f871ad3bf206943f2cfb",
+      "content": "/home/hatch/.cache/hyperframes/history/187d1e42-e4dd-4b84-a8fb-b9875e1e332a/blobs/72/729e31835a21c7b42ee006e2aacc63016abc05d26883f871ad3bf206943f2cfb"
+    },
+    "CLAUDE.md": {
+      "hash": "729e31835a21c7b42ee006e2aacc63016abc05d26883f871ad3bf206943f2cfb",
+      "content": "/home/hatch/.cache/hyperframes/history/187d1e42-e4dd-4b84-a8fb-b9875e1e332a/blobs/72/729e31835a21c7b42ee006e2aacc63016abc05d26883f871ad3bf206943f2cfb"
+    },
+    "assets/Inter-Bold.otf": {
+      "hash": "9fc6261e817d0b1b2bf1953d8799bb1c837d11aeebbf83ae352e7b4d6de6425d",
+      "content": "/home/hatch/.cache/hyperframes/history/187d1e42-e4dd-4b84-a8fb-b9875e1e332a/blobs/9f/9fc6261e817d0b1b2bf1953d8799bb1c837d11aeebbf83ae352e7b4d6de6425d"
+    },
+    "assets/badge.png": {
+      "hash": "7e4419566176002f68c52d30ef2ebaf98a9ccd5f361285afa6168d6f965dac53",
+      "content": "/home/hatch/.cache/hyperframes/history/187d1e42-e4dd-4b84-a8fb-b9875e1e332a/blobs/7e/7e4419566176002f68c52d30ef2ebaf98a9ccd5f361285afa6168d6f965dac53"
+    },
+    "assets/ghost.png": {
+      "hash": "5cf12412b0b208ce0411bbb027babe65626414ea0f60af32256238232ac84243",
+      "content": "/home/hatch/.cache/hyperframes/history/187d1e42-e4dd-4b84-a8fb-b9875e1e332a/blobs/5c/5cf12412b0b208ce0411bbb027babe65626414ea0f60af32256238232ac84243"
+    },
+    "assets/gsap.min.js": {
+      "hash": "28033e449a31ebcc396e5be8b13b63152bf03094288fb5867034321927bce087",
+      "content": "/home/hatch/.cache/hyperframes/history/187d1e42-e4dd-4b84-a8fb-b9875e1e332a/blobs/28/28033e449a31ebcc396e5be8b13b63152bf03094288fb5867034321927bce087"
+    },
+    "assets/robot.png": {
+      "hash": "a05c7619345ed26f11cc5706c8a6a3a9079fd2791bc9174246a7dd1ad282cf9c",
+      "content": "/home/hatch/.cache/hyperframes/history/187d1e42-e4dd-4b84-a8fb-b9875e1e332a/blobs/a0/a05c7619345ed26f11cc5706c8a6a3a9079fd2791bc9174246a7dd1ad282cf9c"
+    },
+    "hyperframes.json": {
+      "hash": "53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50",
+      "content": "/home/hatch/.cache/hyperframes/history/187d1e42-e4dd-4b84-a8fb-b9875e1e332a/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
+    },
+    "index.html": {
+      "hash": "37b4d609f5f463d2f5a0045c3708d705d4a66a4145ce545b5d001a3ae399ff23",
+      "content": "/home/hatch/.cache/hyperframes/history/187d1e42-e4dd-4b84-a8fb-b9875e1e332a/blobs/37/37b4d609f5f463d2f5a0045c3708d705d4a66a4145ce545b5d001a3ae399ff23"
+    },
+    "meta.json": {
+      "hash": "8903c29151bc2103de3602c739be938cd49b76b452f310f03f32bde48ac287f3",
+      "content": "/home/hatch/.cache/hyperframes/history/187d1e42-e4dd-4b84-a8fb-b9875e1e332a/blobs/89/8903c29151bc2103de3602c739be938cd49b76b452f310f03f32bde48ac287f3"
+    },
+    "package.json": {
+      "hash": "e393ab9f803d6be81cbc8b1cc4990730d88aa74ca212312f60fdcf4c0fcc417e",
+      "content": "/home/hatch/.cache/hyperframes/history/187d1e42-e4dd-4b84-a8fb-b9875e1e332a/blobs/e3/e393ab9f803d6be81cbc8b1cc4990730d88aa74ca212312f60fdcf4c0fcc417e"
+    }
+  },
+  "revisions": {
+    "dec57ef8-d8f8-4317-9960-2daab0b351da": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795504440290,
+      "endedAt": 1795504440292,
+      "files": {
+        "index.html": {
+          "before": "/home/hatch/.cache/hyperframes/history/187d1e42-e4dd-4b84-a8fb-b9875e1e332a/blobs/8a/8ac4e0a610207f3bd7fc66409ea7828a20993a5f516ddf9cd6342652ba040ade",
+          "after": "/home/hatch/.cache/hyperframes/history/187d1e42-e4dd-4b84-a8fb-b9875e1e332a/blobs/d4/d40f1f577b577f79fa898f327e358b568c732b27d116cbda1be2b5e28f8982cd"
+        }
+      }
+    },
+    "33a09815-82b1-45c3-8be9-b8e74bba4b45": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795504486285,
+      "endedAt": 1795504486287,
+      "files": {
+        "index.html": {
+          "before": "/home/hatch/.cache/hyperframes/history/187d1e42-e4dd-4b84-a8fb-b9875e1e332a/blobs/d4/d40f1f577b577f79fa898f327e358b568c732b27d116cbda1be2b5e28f8982cd",
+          "after": "/home/hatch/.cache/hyperframes/history/187d1e42-e4dd-4b84-a8fb-b9875e1e332a/blobs/96/96c479bf30321ac326e92313923b2032c9703033225954693df5604df485ab2c"
+        }
+      }
+    },
+    "44bc9dfb-f784-457e-be43-513a2f6709f0": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795504531785,
+      "endedAt": 1795504531786,
+      "files": {
+        "index.html": {
+          "before": "/home/hatch/.cache/hyperframes/history/187d1e42-e4dd-4b84-a8fb-b9875e1e332a/blobs/96/96c479bf30321ac326e92313923b2032c9703033225954693df5604df485ab2c",
+          "after": "/home/hatch/.cache/hyperframes/history/187d1e42-e4dd-4b84-a8fb-b9875e1e332a/blobs/37/37b4d609f5f463d2f5a0045c3708d705d4a66a4145ce545b5d001a3ae399ff23"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": "44bc9dfb-f784-457e-be43-513a2f6709f0",
+      "id": "46225311-df58-4168-8d94-a36402938c18"
+    },
+    "revisions": {
+      "dec57ef8-d8f8-4317-9960-2daab0b351da": [
+        {
+          "id": "c76c398e-0713-473c-9c23-64d006352f7f",
+          "scope": "project",
+          "metadata": {
+            "ok": false,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "safeZones": [
+                "tiktok",
+                "reels",
+                "shorts"
+              ],
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1795504449339,
+          "contentHash": "42c88f33aabe2daad663e667ed4e10c09f94f26ecd01710dfda38106d1421353",
+          "revision": "dec57ef8-d8f8-4317-9960-2daab0b351da",
+          "inputFingerprint": "389a3f6403853f99bd230c0664e7217b08466759d1abc22724f1520ee1392290",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2cfd3f9d-2ead-4d4a-956b-a74c965afc5a"
+        }
+      ],
+      "33a09815-82b1-45c3-8be9-b8e74bba4b45": [
+        {
+          "id": "a5e4ba31-c6a7-4a2a-aac0-0ce3986dc993",
+          "scope": "project",
+          "metadata": {
+            "ok": false,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "safeZones": [
+                "tiktok",
+                "reels",
+                "shorts"
+              ],
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1795504496096,
+          "contentHash": "fc4ee91565dc1c1cea83a7e9b921b2668d3f13328e18d5ac6ee9a2292c3cb1f0",
+          "revision": "33a09815-82b1-45c3-8be9-b8e74bba4b45",
+          "inputFingerprint": "9f36e8945cefc77d896b206bf388217682cddf93a8c026cc0a9d5e11dec3d6ed",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2cfd3f9d-2ead-4d4a-956b-a74c965afc5a"
+        },
+        {
+          "id": "c968ef9d-42c9-4e42-9983-a4beab15c876",
+          "scope": "project",
+          "metadata": {
+            "ok": false,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "safeZones": [
+                "tiktok",
+                "reels",
+                "shorts"
+              ],
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1795504512829,
+          "contentHash": "fc4ee91565dc1c1cea83a7e9b921b2668d3f13328e18d5ac6ee9a2292c3cb1f0",
+          "revision": "33a09815-82b1-45c3-8be9-b8e74bba4b45",
+          "inputFingerprint": "9f36e8945cefc77d896b206bf388217682cddf93a8c026cc0a9d5e11dec3d6ed",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2cfd3f9d-2ead-4d4a-956b-a74c965afc5a"
+        }
+      ],
+      "44bc9dfb-f784-457e-be43-513a2f6709f0": [
+        {
+          "id": "46225311-df58-4168-8d94-a36402938c18",
+          "scope": "project",
+          "report": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story-id-3d/.hyperframes/artifacts/checks/46225311-df58-4168-8d94-a36402938c18.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "safeZones": [
+                "tiktok",
+                "reels",
+                "shorts"
+              ],
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1795504541070,
+          "contentHash": "016cfdb26a9787095240b3bcb58a8892672ebc8988ffcc7a7cc4bc83771c83bd",
+          "revision": "44bc9dfb-f784-457e-be43-513a2f6709f0",
+          "inputFingerprint": "24947eb6235bff8beff47d58e1e10c701c895ec195a32d519095c228d2463339",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "id": "861f939b-fcf5-4554-8556-31873f2cf152",
+        "scope": "project",
+        "report": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story-id-3d/.hyperframes/artifacts/checks/861f939b-fcf5-4554-8556-31873f2cf152.json",
+        "metadata": {
+          "ok": false,
+          "browserSkipped": false,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 45000,
+            "cache": true,
+            "contrast": true,
+            "craft": true,
+            "strict": false,
+            "snapshots": false,
+            "safeZones": [
+              "tiktok",
+              "reels",
+              "shorts"
+            ],
+            "browserGpuMode": "auto",
+            "includeUnmounted": false
+          }
+        },
+        "createdAt": 1795504424431,
+        "contentHash": "9fa530ebb6a5fab1b1b1ec8ffd77399d0c6c6a965fa9ed6f973d9e42693eab91",
+        "revision": null,
+        "inputFingerprint": "6410aac51cd97e2df0b40b4e8c24a94b9f6d79f2d7dacfb8252fc3921339e5e0",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": {
+      "revision": "44bc9dfb-f784-457e-be43-513a2f6709f0",
+      "id": "c61df1fc-7bb4-41f7-b375-d6270f2c2613-7"
+    },
+    "revisions": {
+      "dec57ef8-d8f8-4317-9960-2daab0b351da": [
+        {
+          "scope": "full",
+          "id": "3c079051-7084-47bd-8bf8-a1fd72be5676-0",
+          "time": 1,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795504458558,
+          "contentHash": "195f110573e792f9ca55118d5bccedcf8b51a7ed13997e0c7d50c825d45d62d1",
+          "revision": "dec57ef8-d8f8-4317-9960-2daab0b351da",
+          "inputFingerprint": "389a3f6403853f99bd230c0664e7217b08466759d1abc22724f1520ee1392290",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2cfd3f9d-2ead-4d4a-956b-a74c965afc5a"
+        },
+        {
+          "scope": "full",
+          "id": "3c079051-7084-47bd-8bf8-a1fd72be5676-1",
+          "time": 7,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795504458558,
+          "contentHash": "74a842501c09510dcd9dcbe686785bb027b703e82b7ae325b945f255d7b50bc5",
+          "revision": "dec57ef8-d8f8-4317-9960-2daab0b351da",
+          "inputFingerprint": "389a3f6403853f99bd230c0664e7217b08466759d1abc22724f1520ee1392290",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2cfd3f9d-2ead-4d4a-956b-a74c965afc5a"
+        },
+        {
+          "scope": "full",
+          "id": "3c079051-7084-47bd-8bf8-a1fd72be5676-2",
+          "time": 10,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795504458558,
+          "contentHash": "31fd2730751124dff750e5316d6b60037d9bb82c35e04951457c3f19c6d3d581",
+          "revision": "dec57ef8-d8f8-4317-9960-2daab0b351da",
+          "inputFingerprint": "389a3f6403853f99bd230c0664e7217b08466759d1abc22724f1520ee1392290",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2cfd3f9d-2ead-4d4a-956b-a74c965afc5a"
+        },
+        {
+          "scope": "full",
+          "id": "3c079051-7084-47bd-8bf8-a1fd72be5676-3",
+          "time": 13,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795504458558,
+          "contentHash": "26015ea6a3be6b127d2e1642ace3686d14bc0720698e17c4c4bb833235f61052",
+          "revision": "dec57ef8-d8f8-4317-9960-2daab0b351da",
+          "inputFingerprint": "389a3f6403853f99bd230c0664e7217b08466759d1abc22724f1520ee1392290",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2cfd3f9d-2ead-4d4a-956b-a74c965afc5a"
+        },
+        {
+          "scope": "full",
+          "id": "3c079051-7084-47bd-8bf8-a1fd72be5676-4",
+          "time": 16,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795504458558,
+          "contentHash": "330849f148df0ae7ae59a81ab47c131e28e77b3d871c55adbe0356bd7eb16113",
+          "revision": "dec57ef8-d8f8-4317-9960-2daab0b351da",
+          "inputFingerprint": "389a3f6403853f99bd230c0664e7217b08466759d1abc22724f1520ee1392290",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2cfd3f9d-2ead-4d4a-956b-a74c965afc5a"
+        },
+        {
+          "scope": "full",
+          "id": "3c079051-7084-47bd-8bf8-a1fd72be5676-5",
+          "time": 19,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795504458558,
+          "contentHash": "daede01ad4bd7ce74fd2b0a40fd0efb0a9cded722f415c10e5c6480a3429f5fe",
+          "revision": "dec57ef8-d8f8-4317-9960-2daab0b351da",
+          "inputFingerprint": "389a3f6403853f99bd230c0664e7217b08466759d1abc22724f1520ee1392290",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2cfd3f9d-2ead-4d4a-956b-a74c965afc5a"
+        },
+        {
+          "scope": "full",
+          "id": "3c079051-7084-47bd-8bf8-a1fd72be5676-6",
+          "time": 22,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795504458558,
+          "contentHash": "6d9701a00349275665daa975a37090d08ee18467bd0d654b6b32b6986eba92d2",
+          "revision": "dec57ef8-d8f8-4317-9960-2daab0b351da",
+          "inputFingerprint": "389a3f6403853f99bd230c0664e7217b08466759d1abc22724f1520ee1392290",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2cfd3f9d-2ead-4d4a-956b-a74c965afc5a"
+        },
+        {
+          "scope": "full",
+          "id": "3c079051-7084-47bd-8bf8-a1fd72be5676-7",
+          "time": 23.75,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795504458558,
+          "contentHash": "f7d90576e441a3a213cba7ddd8d2c2e2cf686580b6fc677a9fbdd33bd90bf0fd",
+          "revision": "dec57ef8-d8f8-4317-9960-2daab0b351da",
+          "inputFingerprint": "389a3f6403853f99bd230c0664e7217b08466759d1abc22724f1520ee1392290",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2cfd3f9d-2ead-4d4a-956b-a74c965afc5a"
+        }
+      ],
+      "44bc9dfb-f784-457e-be43-513a2f6709f0": [
+        {
+          "scope": "full",
+          "id": "c61df1fc-7bb4-41f7-b375-d6270f2c2613-0",
+          "image": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story-id-3d/.hyperframes/artifacts/snapshots/7dfaf679-22b3-44ad-b613-ad1489b8255f/frame-00-at-1s.png",
+          "time": 1,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795504552904,
+          "contentHash": "195f110573e792f9ca55118d5bccedcf8b51a7ed13997e0c7d50c825d45d62d1",
+          "revision": "44bc9dfb-f784-457e-be43-513a2f6709f0",
+          "inputFingerprint": "24947eb6235bff8beff47d58e1e10c701c895ec195a32d519095c228d2463339",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "c61df1fc-7bb4-41f7-b375-d6270f2c2613-1",
+          "image": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story-id-3d/.hyperframes/artifacts/snapshots/7dfaf679-22b3-44ad-b613-ad1489b8255f/frame-01-at-7s.png",
+          "time": 7,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795504552905,
+          "contentHash": "74a842501c09510dcd9dcbe686785bb027b703e82b7ae325b945f255d7b50bc5",
+          "revision": "44bc9dfb-f784-457e-be43-513a2f6709f0",
+          "inputFingerprint": "24947eb6235bff8beff47d58e1e10c701c895ec195a32d519095c228d2463339",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "c61df1fc-7bb4-41f7-b375-d6270f2c2613-2",
+          "image": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story-id-3d/.hyperframes/artifacts/snapshots/7dfaf679-22b3-44ad-b613-ad1489b8255f/frame-02-at-10s.png",
+          "time": 10,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795504552905,
+          "contentHash": "31fd2730751124dff750e5316d6b60037d9bb82c35e04951457c3f19c6d3d581",
+          "revision": "44bc9dfb-f784-457e-be43-513a2f6709f0",
+          "inputFingerprint": "24947eb6235bff8beff47d58e1e10c701c895ec195a32d519095c228d2463339",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "c61df1fc-7bb4-41f7-b375-d6270f2c2613-3",
+          "image": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story-id-3d/.hyperframes/artifacts/snapshots/7dfaf679-22b3-44ad-b613-ad1489b8255f/frame-03-at-13s.png",
+          "time": 13,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795504552905,
+          "contentHash": "26015ea6a3be6b127d2e1642ace3686d14bc0720698e17c4c4bb833235f61052",
+          "revision": "44bc9dfb-f784-457e-be43-513a2f6709f0",
+          "inputFingerprint": "24947eb6235bff8beff47d58e1e10c701c895ec195a32d519095c228d2463339",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "c61df1fc-7bb4-41f7-b375-d6270f2c2613-4",
+          "image": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story-id-3d/.hyperframes/artifacts/snapshots/7dfaf679-22b3-44ad-b613-ad1489b8255f/frame-04-at-16s.png",
+          "time": 16,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795504552905,
+          "contentHash": "330849f148df0ae7ae59a81ab47c131e28e77b3d871c55adbe0356bd7eb16113",
+          "revision": "44bc9dfb-f784-457e-be43-513a2f6709f0",
+          "inputFingerprint": "24947eb6235bff8beff47d58e1e10c701c895ec195a32d519095c228d2463339",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "c61df1fc-7bb4-41f7-b375-d6270f2c2613-5",
+          "image": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story-id-3d/.hyperframes/artifacts/snapshots/7dfaf679-22b3-44ad-b613-ad1489b8255f/frame-05-at-19s.png",
+          "time": 19,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795504552905,
+          "contentHash": "daede01ad4bd7ce74fd2b0a40fd0efb0a9cded722f415c10e5c6480a3429f5fe",
+          "revision": "44bc9dfb-f784-457e-be43-513a2f6709f0",
+          "inputFingerprint": "24947eb6235bff8beff47d58e1e10c701c895ec195a32d519095c228d2463339",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "c61df1fc-7bb4-41f7-b375-d6270f2c2613-6",
+          "image": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story-id-3d/.hyperframes/artifacts/snapshots/7dfaf679-22b3-44ad-b613-ad1489b8255f/frame-06-at-22s.png",
+          "time": 22,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795504552905,
+          "contentHash": "ebcd717d04da90cf6a180cb0077e7191fa9f2d01dc5bcdba5e298908a0360753",
+          "revision": "44bc9dfb-f784-457e-be43-513a2f6709f0",
+          "inputFingerprint": "24947eb6235bff8beff47d58e1e10c701c895ec195a32d519095c228d2463339",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "c61df1fc-7bb4-41f7-b375-d6270f2c2613-7",
+          "image": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story-id-3d/.hyperframes/artifacts/snapshots/7dfaf679-22b3-44ad-b613-ad1489b8255f/frame-07-at-23.75s.png",
+          "time": 23.75,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795504552905,
+          "contentHash": "e5c55675115cedb57b50e129a569966c41d69526c4c323ac87053d50181b0a68",
+          "revision": "44bc9dfb-f784-457e-be43-513a2f6709f0",
+          "inputFingerprint": "24947eb6235bff8beff47d58e1e10c701c895ec195a32d519095c228d2463339",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "2cfd3f9d-2ead-4d4a-956b-a74c965afc5a",
+      "completedAt": 1795504678781,
+      "output": "/home/hatch/workspace/makefun/bring-the-humans-03/v2/ghost-story-id-3d/renders/ghost-story-id-3d_2026-11-24_07-16-27.mp4",
+      "status": "completed",
+      "revision": "44bc9dfb-f784-457e-be43-513a2f6709f0"
+    },
+    "retainedRevisions": [
+      "44bc9dfb-f784-457e-be43-513a2f6709f0",
+      "74ac934b-f19e-4a54-83e5-915539f3217e"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}
